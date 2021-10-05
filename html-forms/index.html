@@ -6,37 +6,37 @@
   <body>
     <h1>Coding Form!</h1>
     <form>
-      <label>
+      <label for="email">
         Email:
         <br/>
-        <input type="email" name="email">
+        <input id="email" type="email" name="email">
       </label>
       <p>
-        <label for="coding-cool">
+        <label for="reasons">
           Why is coding cool?
           <br/>
         </label>
-        <select name="reasons">
+        <select name="reasons" id="reasons">
           <option value="because-fun">Because it's fun</option>
           <option value="because-interesting">Because it's interesting</option>
           <option value="because-powerful">Because it's powerful</option>
         </select>
       </p>
       <p>
-        <label for="favorite-language">
+        <label>
           Favorite Language (choose one)
         </label>
       </p>
       <label for="html">
-        <input type="radio" name="language" value="HTML"/>
+        <input id="html" type="radio" name="language" value="html"/>
           HTML
       </label>
       <label for="css">
-          <input type="radio" name="language" value="CSS"/>
+          <input id="css" type="radio" name="language" value="css"/>
           CSS
       </label>
       <label for="javascript">
-          <input type="radio" name="language" value="Javascript"/>
+          <input id="javascript" type="radio" name="language" value="javascript"/>
           Javascript
       </label>
       <p>
@@ -45,7 +45,7 @@
         <br/>
         </label>
         <label>
-        <input type="checkbox" name="sign up" value="yes"/>Sign me up!
+        <input id="sign-up" type="checkbox" name="sign-up" value="yes"/>Sign me up!
         </label>
       </p>
       <textarea name="comments" cols="20" rows="10"></textarea>
