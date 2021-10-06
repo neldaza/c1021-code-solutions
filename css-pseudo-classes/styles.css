@@ -15,14 +15,6 @@ th {
   color: white;
 }
 
-tr:nth-child(1) {
-  background-color: grey;
-}
-
-tr:nth-child(3) {
-  background-color: grey;
-}
-
-tr:nth-child(5) {
+tr:nth-child(odd) {
   background-color: grey;
 }
