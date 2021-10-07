@@ -1,0 +1,16 @@
+body {
+  width: 50%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Brandon Grotesque', sans-serif;
+}
+
+h2 {
+  text-align: left;
+  color: black;
+  font-family: 'Brandon Grotesque', sans-serif;
+  font-size: 20pt;
+}
