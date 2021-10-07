@@ -1,0 +1,28 @@
+.container {
+  width: 60%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: auto;
+  flex-basis: 100%;
+}
+
+img {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+p {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.column-one-half {
+  flex-basis: 50%;
+}
+
+.column-one-third {
+  flex-basis: calc(100% / 3);
+}
