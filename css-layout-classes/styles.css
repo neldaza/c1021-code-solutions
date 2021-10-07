@@ -19,10 +19,10 @@ p {
   flex-basis: 100%;
 }
 
-.column-one-half {
-  flex-basis: 50%;
+.column-one-third {
+  flex-basis: calc(33.333%);
 }
 
-.column-one-third {
-  flex-basis: calc(100% / 3);
+.column-two-thirds {
+  flex-basis: calc(66.666%);
 }
