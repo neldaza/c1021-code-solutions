@@ -7,7 +7,7 @@ h1 {
   text-align: center;
   font-family: 'Brandon Grotesque', sans-serif;
   font-size: 15pt;
-  color: red;
+  color: #ec5d57;
 }
 
 h2 {
@@ -37,14 +37,17 @@ select {
   width: 80px;
   border-radius: 100px;
   color: white;
-  border-color: red;
-  background-color: red;
+  border-color: #ec5d57;
+  background-color: #ec5d57;
   font-family: 'Brandon Grotesque', sans-serif;
   padding: 2px;
 }
 
 .uni {
   padding: 10px;
+  border-style: inset;
+  border-width: thin;
+  border-color: #b3b6b6;
   border-radius: 5px;
-  border-color: lightgray;
+}
 }
