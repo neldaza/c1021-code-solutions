@@ -20,7 +20,6 @@ h2 {
 
 input {
   width: 100%;
-  padding: 10px;
 }
 
 select {
@@ -32,4 +31,20 @@ select {
   display: flex;
   justify-content: right;
   text-align: center;
+}
+
+#submit {
+  width: 80px;
+  border-radius: 100px;
+  color: white;
+  border-color: red;
+  background-color: red;
+  font-family: 'Brandon Grotesque', sans-serif;
+  padding: 2px;
+}
+
+.uni {
+  padding: 10px;
+  border-radius: 5px;
+  border-color: lightgray;
 }
