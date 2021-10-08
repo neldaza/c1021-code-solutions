@@ -8,5 +8,7 @@ html {
 
   /* your code here */
   position: fixed;
-  left: 500px;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
 }
