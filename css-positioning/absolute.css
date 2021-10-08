@@ -16,9 +16,8 @@
   font-size: 3rem;
 
   /* your code here */
-  position: relative;
-  top: -110px;
-  right: -235px;
+  position: absolute;
+  left: 15rem;
 }
 
 .joke {
@@ -31,13 +30,15 @@
   text-transform: uppercase;
 
   /* your code here */
-  position: relative;
-  bottom: -200px;
+  position: absolute;
+  width: 15%;
+  top: 10rem;
 }
 
 .overlay {
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
 
   /* your code here */
-  height: 0;
+  position: absolute;
+  height: 100%;
 }
