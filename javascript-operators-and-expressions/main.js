@@ -23,6 +23,6 @@ var headCount = 30;
 var isSparta = (headCount === 300);
 console.log('The headcount is equal to Sparta:', isSparta);
 console.log('Typeof isSparta:', typeof isSparta);
-var motto = 'Nelson Daza' + ' ' + 'is the GOAT';
+var motto = fullName + ' ' + 'is the GOAT';
 console.log('value of motto:', motto);
 console.log('Typeof motto:', typeof motto);
