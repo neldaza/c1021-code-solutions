@@ -17,7 +17,7 @@ div {
 
 .row {
   display: flex;
-  padding: 5rem;
+  padding: 6rem;
 }
 
 .column {
@@ -39,16 +39,21 @@ h3 {
 
 p {
   font-family: 'Karla', sans-serif;
+  line-height: 30px;
+  color: #939393;
 }
 
 h1 {
   font-family: 'Karla', sans-serif;
   font-size: 45pt;
+  margin: 3px;
 }
 
 .button {
   display: flex;
   justify-content: center;
+  position: relative;
+  left: 1rem;
 }
 
 .learn-more {
@@ -65,4 +70,8 @@ h1 {
 .learn-more:hover {
   background-color: lightgrey;
   color: white;
+}
+
+.heading-description {
+  text-align: center;
 }
