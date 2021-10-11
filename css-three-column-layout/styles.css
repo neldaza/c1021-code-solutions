@@ -14,7 +14,7 @@
 }
 
 .column {
-  display: block;
+  width: 33%;
 }
 
 h1 {
@@ -41,9 +41,9 @@ p {
   display: flex;
   justify-content: center;
   border-radius: 400px;
-  width: 35%;
+  width: 25%;
   position: relative;
-  left: 86px;
+  margin: auto;
   padding: 9px;
 }
 
