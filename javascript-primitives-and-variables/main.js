@@ -1,0 +1,15 @@
+var fullName = 'Nelson Daza';
+var isCool = true;
+var totalPets = 0;
+console.log('His Name is', fullName);
+console.log('Nelson is cool:', isCool);
+console.log('Nelson lives with this many pets:', totalPets);
+console.log('typeof fullName:', typeof fullName);
+console.log('typeof isCool:', typeof isCool);
+console.log('typeof totalPets:', typeof totalPets);
+var unknown = null;
+console.log('value of unknown:', unknown);
+console.log('typeof unknown:', typeof unknown);
+var never;
+console.log('value of never:', never);
+console.log('typeof never:', typeof never);
