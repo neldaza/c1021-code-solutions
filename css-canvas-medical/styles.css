@@ -23,6 +23,7 @@ body {
   display: flex;
   font-size: 20pt;
   font-family: 'Tiempos Headline', sans-serif;
+  color: #0b4265;
 }
 
 .contact-us-button {
@@ -36,4 +37,15 @@ button {
   background-color: #294464;
   color: white;
   font-family: 'Avenir', sans-serif;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  padding-top: 5rem;
 }
