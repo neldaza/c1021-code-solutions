@@ -43,9 +43,22 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 img {
   width: 100%;
   padding-top: 5rem;
+}
+
+.hero-img-text {
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  width: 50%;
+  bottom: -15rem;
+  padding-left: 10rem;
+  color: #fff;
+  font-family: 'Avenir', sans-serif;
+}
 }
