@@ -1,0 +1,26 @@
+body {
+  width: 80%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column-one-half {
+  width: 50%;
+}
+
+.heading-text-right {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 1rem;
+  font-family: 'Avenir', sans-serif;
+}
+
+.heading-text-left {
+  display: flex;
+  font-size: 20pt;
+  font-family: 'Tiempos Headline', sans-serif;
+}
