@@ -11,13 +11,14 @@ var orderHistory = [
       packageDelivered: true,
       handedToResident: true
     },
-    productData: {
+    productList: [{
       productCategory: 'books',
       title: 'Javascript for Impatient programmers',
       author: 'Rauschmayer, Dr. Axel',
       itemPriceBeforeTax: '$31.55',
       itemPriceAfterTax: '$34.00'
     }
+    ]
   },
   {
     orderData: {
@@ -31,13 +32,13 @@ var orderHistory = [
       packageDelivered: true,
       handedToResident: true
     },
-    productData: {
+    productList: [{
       productCategory: 'books',
       title: 'The Timeless Way of Building',
       author: 'Alexander, Christopher',
       itemPriceBeforeTax: '$41.33',
       itemPriceAfterTax: '$44.53'
-    }
+    }]
   },
   {
     orderData: {
@@ -51,12 +52,12 @@ var orderHistory = [
       productDelvered: true,
       handedToResident: true
     },
-    productData: {
+    productList: [{
       productCategory: 'electronics',
       title: 'Gamecube Controller Adapter, Super Smash Bros Switch Gamecube Adapter for Wii U, PC. Support Turbo and Vibration Features. No Driver and No Lag-Gamecube Adapter',
       itemPriceBeforeTax: '$15.98',
       itemPriceAfterTax: '$17.22'
-    }
+    }]
   },
   {
     orderData: {
