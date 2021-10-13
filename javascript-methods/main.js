@@ -45,11 +45,11 @@ var css = {
 library.push(js);
 library.unshift(css);
 library.splice(1, 1);
-console.log(library);
+console.log("The library's value is:", library);
 
 var fullName = 'Nelson David Daza';
 var firstAndLastName = fullName.split(' ');
-console.log(firstAndLastName);
+console.log('My full name split into an array is:', firstAndLastName);
 var firstName = firstAndLastName[0];
 var sayMyName = firstName.toUpperCase();
-console.log(sayMyName);
+console.log('My first name in uppercase is:', sayMyName);
