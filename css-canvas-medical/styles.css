@@ -17,6 +17,7 @@ body {
   position: relative;
   top: 50%;
   font-family: 'Avenir', sans-serif;
+  margin-right: 5rem;
 }
 
 .heading-text-left {
@@ -32,7 +33,7 @@ body {
   bottom: 10px;
 }
 
-button {
+.contact-us-button > button {
   padding: 10px;
   background-color: #294464;
   color: white;
@@ -40,25 +41,171 @@ button {
 }
 
 .hero-img {
-  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-img {
+.hero-img > img {
   width: 100%;
-  padding-top: 5rem;
+  filter: brightness(75%);
+  padding: 5rem;
 }
 
 .hero-img-text {
   display: flex;
-  position: absolute;
   flex-wrap: wrap;
-  width: 50%;
-  bottom: -15rem;
-  padding-left: 10rem;
   color: #fff;
   font-family: 'Avenir', sans-serif;
+  position: absolute;
+  padding-left: 10rem;
+  padding-top: 7rem;
+  top: 2rem;
+  line-height: 2rem;
+  width: 48rem;
+  height: 44rem;
 }
+
+.hero-img-text > h1 {
+  font-size: 40pt;
+  line-height: normal;
+  font-family: 'Tiempos Headline', sans-serif;
+  position: relative;
+  top: 5rem;
+}
+
+.hero-img-text > p {
+  padding-top: 2rem;
+}
+
+.hero-img-button {
+  padding-top: 2rem;
+}
+
+.hero-img-button > button {
+  padding: 10px;
+  background-color: #294464;
+  color: white;
+  font-family: 'Avenir', sans-serif;
+  font-size: 15pt;
+  width: 161%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#clinicians-prefer {
+  text-align: center;
+  justify-content: center;
+  padding-top: 5rem;
+  color: #6e6e6e;
+  line-height: 2rem;
+  font-family: 'Avenir', sans-serif;
+}
+
+.column-full-header > h1 {
+  font-family: 'Tiempos Headline', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.background-clinicians {
+  background-color: #fafafa;
+  padding-bottom: 5rem;
+}
+
+#left-list {
+  text-align: center;
+  font-family: 'Avenir', sans-serif;
+  line-height: 4rem;
+}
+
+#right-list {
+  text-align: center;
+  font-family: 'Avenir', sans-serif;
+  line-height: 4rem;
+}
+
+.regular-column-text-left {
+  width: 75%;
+  color: #707070;
+}
+
+.learn-more-section {
+  justify-content: space-evenly;
+  padding-right: 5rem;
+  margin: 3rem;
+}
+
+.contact-text-right {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  line-height: 3rem;
+  font-family: 'Avenir', sans-serif;
+  padding-top: 6px;
+}
+
+.contact-text-left {
+  justify-content: space-around;
+  color: white;
+  font-family: 'Avenir', sans-serif;
+}
+
+#grey-background {
+  background-color: #525351;
+  padding: 6rem;
+}
+
+.contact-text-left > h1 {
+  font-family: 'Tiempos Headline', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.blue-logo {
+  width: 20%;
+  position: relative;
+  top: 20px;
+  left: 5rem;
+}
+
+.white-logo {
+  width: 20%;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.contact-text-left > ul {
+  padding-inline-start: unset;
+  margin-block-start: unset;
+  margin-block-end: unset;
+}
+
+#grey-background-footer {
+  background-color: #fafafa;
+}
+
+.footer-text {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 6rem;
+}
+
+.footer-text > p {
+  font-family: 'Avenir', sans-serif;
+  color: #707070;
+}
+
+.footer-text > p:nth-child(2) {
+  position: relative;
+  left: 4rem;
+}
+
+#cascade-family {
+  padding-bottom: 5rem;
 }
