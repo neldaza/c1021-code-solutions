@@ -63,17 +63,13 @@ function categorizeAcidity(pH) {
 
   if (pH > 14) {
     return ('invalid pH level');
-  }
-  if (pH < 0) {
+  } else if (pH < 0) {
     return ('invalid pH level');
-  }
-  if (pH = base) {
+  } else if (pH = base) {
     return ('base');
-  }
-  if (pH = acid) {
+  } else if (pH = acid) {
     return ('acid');
-  }
-  if (pH = neutral) {
+  } else if (pH = neutral) {
     return ('neutral');
   }
 }
@@ -81,17 +77,11 @@ function categorizeAcidity(pH) {
 function introduceWarnerBro(name) {
   if (name === 'yakko') {
     return ("We're the warner brothers!");
-  }
-  if (name === 'wakko') {
+  } else if (name === 'wakko') {
     return ("We're the warner brothers!");
-  }
-  if (name === 'dot') {
+  } else if (name === 'dot') {
     return ("I'm cute~");
-  }
-  if (name === 'cody') {
-    return ('Goodnight everybody!');
-  }
-  if (name === 'minerva') {
+  } else {
     return ('Goodnight everybody!');
   }
 }
