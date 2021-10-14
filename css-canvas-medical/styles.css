@@ -3,6 +3,10 @@ body {
   margin: auto;
 }
 
+button {
+  border-radius: 0.5rem;
+}
+
 .row {
   display: flex;
 }
@@ -58,15 +62,16 @@ body {
   color: #fff;
   font-family: 'Avenir', sans-serif;
   position: absolute;
-  padding-left: 10rem;
+  padding-left: 5rem;
   padding-top: 7rem;
-  top: -5rem;
-  line-height: 1.5rem;
+  top: -1rem;
+  line-height: 2rem;
   width: 40rem;
+  left: 7rem;
 }
 
 .hero-img-text > h1 {
-  font-size: 25pt;
+  font-size: 32pt;
   line-height: normal;
   font-family: 'Tiempos Headline', sans-serif;
   position: relative;
@@ -212,6 +217,5 @@ ul {
 
 #first-button {
   position: relative;
-  top: 5rem;
-}
+  top: 7rem;
 }
