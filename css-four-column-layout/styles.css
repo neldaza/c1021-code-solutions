@@ -22,15 +22,15 @@
 }
 
 .column {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .column > img.phone-pic {
   width: 85%;
   margin: 0.5rem;
   display: block;
+  position: relative;
+  left: 1rem;
 }
 
 .column > img.icon {
@@ -55,23 +55,24 @@
 
 .one {
   position: relative;
-  right: 0.5rem;
+  right: 0.1rem;
 }
 
 .two {
   position: relative;
-  right: 0.25rem;
+  right: 0.1rem;
 }
 
 .three {
   position: relative;
-  left: 0.65rem;
+  left: 0.1rem;
 }
 
 .four {
   position: relative;
-  left: 0.75rem;
+  left: 0.1rem;
 }
-}
-}
+
+.one-fourth {
+  text-align: center;
 }
