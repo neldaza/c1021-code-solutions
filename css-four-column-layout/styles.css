@@ -8,7 +8,7 @@
   padding-bottom: 1rem;
 }
 
-.header-row {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,42 +37,29 @@
   width: 20%;
 }
 
-.footer-column > h3 {
+.footer > h3 {
   font-family: 'Barlow', sans-serif;
   font-weight: 700;
 }
 
-.footer-column > p {
+.footer > p {
   padding-top: 1rem;
 }
 
-.footer-row {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  font-family: 'Barlow', sans-serif;
-}
-
-.one {
+.right {
   position: relative;
   right: 0.1rem;
 }
 
-.two {
-  position: relative;
-  right: 0.1rem;
-}
-
-.three {
-  position: relative;
-  left: 0.1rem;
-}
-
-.four {
+.left {
   position: relative;
   left: 0.1rem;
 }
 
 .one-fourth {
   text-align: center;
+}
+
+.row {
+  display: flex;
 }
