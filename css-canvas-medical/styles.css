@@ -18,30 +18,18 @@ button {
 .heading-text-right {
   display: flex;
   justify-content: space-between;
-  position: relative;
-  top: 50%;
   font-family: 'Avenir', sans-serif;
   margin-right: 5rem;
+  align-items: center;
 }
 
-.heading-text-left {
-  display: flex;
-  font-size: 20pt;
-  font-family: 'Tiempos Headline', sans-serif;
-  color: #0b4265;
-}
-
-.contact-us-button {
-  display: flex;
-  position: relative;
-  bottom: 10px;
-}
-
-.contact-us-button > button {
+.heading-text-right > button {
   padding: 10px;
   background-color: #294464;
   color: white;
   font-family: 'Avenir', sans-serif;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 .hero-img {
@@ -93,14 +81,14 @@ button {
   color: white;
   font-family: 'Avenir', sans-serif;
   font-size: 15pt;
-  width: 161%;
+  width: 14rem;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-#clinicians-prefer {
+.clinicians-prefer {
   text-align: center;
   justify-content: center;
   padding-top: 5rem;
@@ -109,7 +97,7 @@ button {
   font-family: 'Avenir', sans-serif;
 }
 
-.column-full-header > h1 {
+.clinicians-prefer-canvas-header > h1 {
   font-family: 'Tiempos Headline', sans-serif;
 }
 
@@ -122,19 +110,19 @@ ul {
   padding-bottom: 5rem;
 }
 
-#left-list {
+.left-list {
   text-align: center;
   font-family: 'Avenir', sans-serif;
   line-height: 4rem;
 }
 
-#right-list {
+.right-list {
   text-align: center;
   font-family: 'Avenir', sans-serif;
   line-height: 4rem;
 }
 
-.regular-column-text-left {
+.learn-more-button-text-left {
   width: 75%;
   color: #707070;
 }
@@ -160,7 +148,7 @@ ul {
   font-family: 'Avenir', sans-serif;
 }
 
-#grey-background {
+.grey-background {
   background-color: #525351;
   padding: 6rem;
 }
@@ -174,7 +162,6 @@ ul {
 .blue-logo {
   width: 20%;
   position: relative;
-  top: 20px;
   left: 5rem;
 }
 
@@ -190,7 +177,7 @@ ul {
   margin-block-end: unset;
 }
 
-#grey-background-footer {
+.grey-background-footer {
   background-color: #fafafa;
 }
 
@@ -211,11 +198,22 @@ ul {
   left: 4rem;
 }
 
-#cascade-family {
+.cascade-family {
   padding-bottom: 5rem;
 }
 
-#first-button {
+.first-button {
   position: relative;
   top: 7rem;
+}
+
+.heading-top {
+  padding-bottom: 1rem;
+  border-style: solid;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
+  border-bottom-color: #e7e9ec;
+  padding-top: 2rem;
+  align-items: center;
 }
