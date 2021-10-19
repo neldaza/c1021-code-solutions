@@ -1,0 +1,65 @@
+.container {
+  width: 80%;
+  margin: auto;
+  background-color: #f7f8fa;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20pt;
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+}
+
+.four-phone-pictures-div {
+  display: flex;
+}
+
+.column {
+  flex-wrap: wrap;
+}
+
+.column > img.phone-pic {
+  width: 85%;
+  margin: 0.5rem;
+  display: block;
+  position: relative;
+  left: 1rem;
+}
+
+.column > img.icon {
+  width: 20%;
+}
+
+.footer > h3 {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+}
+
+.footer > p {
+  padding-top: 1rem;
+}
+
+.right {
+  position: relative;
+  right: 0.1rem;
+}
+
+.left {
+  position: relative;
+  left: 0.1rem;
+}
+
+.one-fourth {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
