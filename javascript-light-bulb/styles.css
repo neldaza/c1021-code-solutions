@@ -1,0 +1,45 @@
+body {
+  background-color: #fef9f1;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  height: 45rem;
+}
+
+.row {
+  display: flex;
+}
+
+.inner-circle {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  background-color: #faea84;
+  position: relative;
+  top: 50%;
+  box-shadow: 0 0 5rem #faea84;
+}
+
+.circle-middle-horizontal {
+  justify-content: center;
+  height: inherit;
+}
+
+.black-background {
+  background-color: #111;
+}
+
+.grey-circle {
+  background-color: #252525;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  position: relative;
+  top: 50%;
+}
+
+.tan-background {
+  background-color: #fef9f1;
+}
