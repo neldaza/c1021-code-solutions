@@ -6,10 +6,11 @@
 // 4. splice i from the values array
 
 function filterOutStrings(values) {
+  var array = [];
   for (i = 0; i < values.length; i++) {
-    if (i[String]) {
-
-      values.splice(i);
+    if (typeof values[i] !== 'string') {
+      array.push(values[i]);
     }
   }
+  return array;
 }
