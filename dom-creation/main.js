@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* exported pokedex */
 
 function renderPokemon(pokemon) {
@@ -86,6 +87,7 @@ var pokedex = [
 ];
 
 var row = document.querySelector('.row');
-for (var pokemon of pokedex) {
+for (i = 0; i < pokedex.length; i++) {
+  var pokemon = pokedex[i];
   row.append(renderPokemon(pokemon));
 }
