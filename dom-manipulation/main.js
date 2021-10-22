@@ -4,20 +4,20 @@ var $clickCount = document.querySelector('.click-count');
 var clicksHit = 1;
 
 function clicks(event) {
-  $clickCount++;
-  document.querySelector('.click-count').textContent = 'Clicks: ' + clicksHit++;
+  event++;
+  $clickCount.textContent = 'Clicks: ' + clicksHit++;
   if (clicksHit < 5) {
-    document.querySelector('button').className = 'hot-button + cold';
+    $hotButton.className = 'hot-button + cold';
   } else if (clicksHit < 8) {
-    document.querySelector('button').className = 'hot-button + cool';
+    $hotButton.className = 'hot-button + cool';
   } else if (clicksHit < 11) {
-    document.querySelector('button').className = 'hot-button + tepid';
+    $hotButton.className = 'hot-button + tepid';
   } else if (clicksHit < 14) {
-    document.querySelector('button').className = 'hot-button + warm';
+    $hotButton.className = 'hot-button + warm';
   } else if (clicksHit < 17) {
-    document.querySelector('button').className = 'hot-button + hot';
+    $hotButton.className = 'hot-button + hot';
   } else {
-    document.querySelector('button').className = 'hot-button + nuclear';
+    $hotButton.className = 'hot-button + nuclear';
   }
 }
 
