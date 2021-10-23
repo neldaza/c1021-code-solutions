@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* exported includesSeven */
 function includesSeven(array) {
   var seven = 7;
