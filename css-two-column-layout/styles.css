@@ -1,0 +1,89 @@
+
+.heading {
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 56%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex-basis: wrap;
+}
+
+.text-box {
+  width: 50%;
+}
+
+.picture-file {
+  width: 75%;
+}
+
+h3 {
+  font-family: 'Karla', sans-serif;
+}
+
+p {
+  font-family: 'Karla', sans-serif;
+  line-height: 30px;
+  color: #939393;
+}
+
+h1 {
+  font-family: 'Karla', sans-serif;
+  font-size: 45pt;
+  margin: 3px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.learn-more {
+  padding: 10px;
+  width: 12%;
+  background-color: white;
+  border-color: #d14c45;
+  color: #d55b55;
+  font-family: 'Karla', sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.learn-more:hover {
+  background-color: lightgrey;
+  color: white;
+}
+
+.heading-description {
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+}
+
+.corner-left {
+  display: flex;
+  position: relative;
+  left: 5rem;
+  margin: -2rem;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.corner-right {
+  display: flex;
+  position: relative;
+  right: 5rem;
+  margin: -2rem;
+  justify-content: center;
+  padding: 5rem;
+}
