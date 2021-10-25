@@ -11,8 +11,9 @@ function includesSeven(array) {
     if (array[i] !== seven) {
       return false;
     }
+
   }
-  if (array[i] === undefined) {
-    return false;
-  }
+  return false;
 }
+
+// new
