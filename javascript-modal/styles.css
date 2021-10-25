@@ -1,0 +1,49 @@
+.container {
+  height: 50rem;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.open-modal {
+  background-color: #4a4ae9;
+  color: white;
+  border-radius: 5px;
+  border-color: transparent;
+  box-shadow: 0 2px 3px #929393;
+  flex-basis: 15%;
+  font-size: 20pt;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.survey {
+  justify-content: center;
+}
+
+.survey-box {
+  text-align: center;
+  position: relative;
+  top: 13rem;
+  background-color: grey;
+  height: 18rem;
+  width: 35rem;
+  border-radius: 5px;
+}
+
+.survey-box > h2 {
+  margin: 13%;
+  font-size: 20pt;
+  font-family: sans-serif;
+}
+
+.no {
+  width: 21%;
+  height: 20%;
+  font-size: 20pt;
+  border-radius: 5px;
+  background-color: #eb5d5d;
+  color: white;
+}
