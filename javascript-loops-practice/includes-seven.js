@@ -15,5 +15,3 @@ function includesSeven(array) {
   }
   return false;
 }
-
-// new

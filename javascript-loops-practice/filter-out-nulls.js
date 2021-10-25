@@ -8,5 +8,3 @@ function filterOutNulls(values) {
   }
   return array;
 }
-
-// new
