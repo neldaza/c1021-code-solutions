@@ -15,7 +15,7 @@
 }
 
 .text-box {
-  width: 45%;
+  width: 50%;
 }
 
 .picture-file {
@@ -41,8 +41,7 @@ h1 {
 .button {
   display: flex;
   justify-content: center;
-  position: relative;
-  left: 3rem;
+  text-align: center;
 }
 
 .learn-more {
@@ -71,7 +70,7 @@ h1 {
   justify-content: center;
 }
 
-.top-left {
+.corner-left {
   display: flex;
   position: relative;
   left: 5rem;
@@ -80,25 +79,7 @@ h1 {
   padding: 5rem;
 }
 
-.top-right {
-  display: flex;
-  position: relative;
-  right: 5rem;
-  margin: -2rem;
-  justify-content: center;
-  padding: 5rem;
-}
-
-.bottom-left {
-  display: flex;
-  position: relative;
-  left: 5rem;
-  margin: -2rem;
-  justify-content: center;
-  padding: 5rem;
-}
-
-.bottom-right {
+.corner-right {
   display: flex;
   position: relative;
   right: 5rem;
