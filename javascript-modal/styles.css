@@ -1,0 +1,72 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(1, 1, 1, 0.85);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 1rem;
+  visibility: hidden;
+}
+
+.row {
+  display: flex;
+}
+
+.open-modal {
+  background-color: #4a4ae9;
+  color: white;
+  border-radius: 5px;
+  border-color: transparent;
+  box-shadow: 0 2px 3px #929393;
+  flex-basis: 15%;
+  font-size: 20pt;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 17%;
+}
+
+.survey {
+  justify-content: center;
+}
+
+.survey-box {
+  text-align: center;
+  background-color: white;
+  height: 18rem;
+  width: 35rem;
+  border-radius: 5px;
+  position: relative;
+  top: 19rem;
+}
+
+.survey-box > h2 {
+  margin: 13%;
+  font-size: 20pt;
+  font-family: sans-serif;
+}
+
+.no {
+  width: 21%;
+  height: 20%;
+  font-size: 20pt;
+  border-radius: 5px;
+  background-color: #eb5d5d;
+  color: white;
+}
+
+.overlay {
+  height: 100vh;
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
+.container-visible {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(1, 1, 1, 0.85);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 1rem;
+  visibility: visible;
+}
