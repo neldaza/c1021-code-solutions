@@ -7,11 +7,6 @@ function includesSeven(array) {
       return true;
     }
   }
-  for (i = 0; i < array.length; i++) {
-    if (array[i] !== seven) {
-      return false;
-    }
 
-  }
   return false;
 }
