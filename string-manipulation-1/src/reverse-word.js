@@ -1,20 +1,33 @@
 /* exported reverseWord */
 // 1. define function reverseWord with word perameter
-// . empty string variable
-// 2. assign empty array to variable array
-// 3. loop through entirety of word
-// 4. store indexes of word in array variable
-// 5. loop through array variable and concatenate string variable with reverse indexes of array
-// return string
+// 2. if word argument equals empty string
+// 3. return empty string
+// 4. assign empty string to variable finalWord
+// 5. assign empty string to variable insideWord
+// 6. loop through word argument backwards
+// 7. if word at index is equal to a space,
+// 8. add insideWord to final word,
+// 9. and reset insideWord
+// 10. if it's a letter,
+// 11. add the letter at the index to insideWord string
+// 12. add insideWord to finalWord for last iteration
+// 13. return finalWord (output)
 
 function reverseWord(word) {
-  var string = '';
-  var array = [];
-  for (var i = 0; i < word.length; i++) {
-    array.push(i);
+  if (word === '') {
+    return '';
   }
-  for (i = 0; i > array.length --i) {
-    string += array[i];
+  var finalWord = '';
+  var insideWord = '';
+
+  for (var i = word.length - 1; i >= 0; i--) {
+    if (word[i] === ' ') {
+      finalWord += insideWord;
+      insideWord = '';
+    } else {
+      insideWord += word[i];
+    }
   }
-  return string;
+  finalWord += insideWord;
+  return finalWord;
 }
