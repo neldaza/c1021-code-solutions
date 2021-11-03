@@ -10,40 +10,12 @@
 // Line 47: Otherwise, return the vowels initial boolean of false, because if the character argument was looped through, and an exact match
 // for strictly a singular vowel was not found, then the function will return false because the argument being called wasn't a vowel
 function isVowel(character) {
-  var a = ['a'];
-  var upperCasedA = ['A'];
-  var e = ['e'];
-  var upperCasedE = ['E'];
-  var letterI = ['i'];
-  var upperCasedI = ['I'];
-  var o = ['o'];
-  var upperCasedO = ['O'];
-  var u = ['u'];
-  var upperCasedU = ['U'];
-  var vowel = false;
-  for (i = 0; i < character.length; i++) {
-    if (character[i] === a[i]) {
-      vowel = true;
-    } else if (character[i] === upperCasedA[i]) {
-      vowel = true;
-    } else if (character[i] === e[i]) {
-      vowel = true;
-    } else if (character[i] === upperCasedE[i]) {
-      vowel = true;
-    } else if (character[i] === letterI[i]) {
-      vowel = true;
-    } else if (character[i] === upperCasedI[i]) {
-      vowel = true;
-    } else if (character[i] === o[i]) {
-      vowel = true;
-    } else if (character[i] === upperCasedO[i]) {
-      vowel = true;
-    } else if (character[i] === u[i]) {
-      vowel = true;
-    } else if (character[i] === upperCasedU[i]) {
-      vowel = true;
+  var vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  for (var i = 0; i < vowels.length; i++) {
+    if (vowels[i] === character) {
+      return true;
     }
 
   }
-  return vowel;
+  return false;
 }

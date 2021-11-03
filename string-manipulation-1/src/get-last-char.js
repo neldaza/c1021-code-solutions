@@ -12,10 +12,9 @@
 // variable
 // 6. return the output
 
-function getLastChar(string) {
-  var word = string;
+function getLastChar(word) {
   var wordLength = word.length;
   var lastCharIndex = wordLength - 1;
-  var lastChar = string[lastCharIndex];
+  var lastChar = word[lastCharIndex];
   return lastChar;
 }

@@ -6,8 +6,6 @@
 // 3. returns the value of the new storage value in step 2
 
 function getFirstChar(string) {
-  // eslint-disable-next-line no-unused-vars
-  var word = string;
   var firstChar = string[0];
   return firstChar;
 }

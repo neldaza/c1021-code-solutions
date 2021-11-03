@@ -6,7 +6,9 @@
 // 4. if it isnt, return false
 function isUpperCased(word) {
   var upperCasedWord = word.toUpperCase();
-  if (word === upperCasedWord) { return true; }
+  if (word === upperCasedWord) {
+    return true;
+  }
 
   return false;
 }
