@@ -12,10 +12,9 @@ function tail(array) {
     return [];
   }
   var newArray = [];
-  for (var i = 0; i < array.length; i++) {
-    if (i !== 0) {
-      newArray.push(array[i]);
-    }
+  for (var i = 1; i < array.length; i++) {
+    newArray.push(array[i]);
   }
+
   return newArray;
 }
