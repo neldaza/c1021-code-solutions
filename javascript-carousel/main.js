@@ -7,8 +7,37 @@ var $circleFive = document.querySelector('.circle-five');
 var $img = document.querySelector('img');
 var $rightArrow = document.querySelector('.right');
 var $leftArrow = document.querySelector('.left');
+var $circle = document.querySelector('circle');
+//
+var $pikachuPic = $img.setAttribute('src', 'images/025.png');
+var $jigglypuffPic = $img.setAttribute('src', 'images/039.png');
+var $bulbasaurPic = $img.setAttribute('src', 'images/001.png');
+var $charmanderPic = $img.setAttribute('src', 'images/004.png');
+var $squirtlePic = $img.setAttribute('src', 'images/007.png');
+var $picturesArray = [$pikachuPic, $jigglypuffPic, $bulbasaurPic, $charmanderPic, $squirtlePic];
+var currentImage = 0;
+//
+// 1. create function to switch to next picture based off event
+// 2. loop through array of pictures
+// 3. if the current picture matches the picture in the array order
+// 4. currentImage = 0
+// ? expression to return next index of array to viewport
 
-function pictureOne(event) {
+// 6. increment currentImage value for next Picture
+function toggleNext(event) {
+  for (var i = 0; i < $picturesArray.length; i++) {
+    var nextPicture = $picturesArray[i + 1];
+    if ($img.getAttribute('src') === $picturesArray[i].getAttribute('src')) {
+      nextPicture;
+    }
+    currentImage++;
+  }
+
+}
+
+$circle.addEventListener('click', toggleNext);
+
+/* function pictureOne(event) {
   $img.setAttribute('src', 'images/025.png');
   $circleOne.className = 'circle circle-one circle-background';
   $circleTwo.className = 'circle circle-two';
