@@ -7,12 +7,9 @@ xhr.addEventListener('load', function () {
   console.log(xhr.status);
   console.log(xhr.response);
   for (var i = 0; i < xhr.response.length; i++) {
-    if (xhr.response[i]) {
-      var li = document.createElement('li');
-      li.textContent = xhr.response[i].name;
-      $userList.append(li);
-
-    }
+    var li = document.createElement('li');
+    li.textContent = xhr.response[i].name;
+    $userList.append(li);
   }
 }
 );
