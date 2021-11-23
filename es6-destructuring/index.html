@@ -49,12 +49,12 @@ const library = [
   }
 ];
 
-const { 0: book3, 1: book4, 2: book5 } = library;
+const [book3, book4, book5] = library;
 console.log('book 3:', book3);
 console.log('book 4:', book4);
 console.log('book 5:', book5);
 
-const { 3: book6 } = library;
+const [,,, book6] = library;
 console.log('book 6:', book6);
   </script>
 </body>
