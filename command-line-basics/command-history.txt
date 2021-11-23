@@ -1,0 +1,76 @@
+    1  pwd
+    2  cd ~/repos/c1021-code-solutions/command-line-basics/
+    3  pwd
+    4  man man
+    5  man cat
+    6  cat laziness.txt
+    7  cat impatience.txt
+    8  cat hubris.txt
+    9  cat laziness.txt impatience.txt hubris.txt
+   10  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+   11  cat three-virtues.txt
+   12  man ls
+   13  ls -a
+   14  ls lfz-staff/
+   15  ls -a lfz-staff/
+   16  ls -F lfz-staff/
+   17  ls -aF lfz-staff > lfz-staff/contents.txt
+   18  cat staff/contents.txt
+   19  ls -aF lfz-staff/ > lfz-staff/contents.txt
+   20  cat staff/contents.txt
+   21  ls lfz-staff/
+   22  ls -aF lfz-staff > lfz-staff/contents.txt
+   23  cat lfz-staff/contents.txt
+   24  man pwd
+   25  pwd
+   26  pwd > i-was-here.txt
+   27  ls
+   28  cat i-was-here.txt
+   29  man echo
+   30  echo 'Hello, World!'
+   31  echo 'Hello, World!' > hello.txt
+   32  ls 
+   33  cat hello.txt
+   34  man touch
+   35  touch > tag-youre-it.txt
+   36  touch man
+   37  man touch
+   38  touch > tag-youre-it.txt
+   39  touch >snoot/boop.txt
+   40  ls snoot/
+   41  man mkdir
+   42  mkdir > parent
+   43  man mkdir
+   44  mkdir -p
+   45  mkdir -p parent
+   46  ls parent/
+   47  man mkdir
+   48  mkdir -p parent/
+   49  ls parent/
+   50  mkdir parent/ child
+   51  man mkdir
+   52  mkdir parent/ child
+   53  mkdir parent/child
+   54  mkdir parent/child/grandchild
+   55  man touch
+   56  touch >parent/child/grandchild/.gitkeep
+   57  man ls
+   58  ls -a .gitkeep
+   59  ls -a parent/child/grandchild
+   60  man mv
+   61  mv pokemon/ pokiemans/
+   62  mv pokiemans/ pokemon/
+   63  ls pokemon
+   64  man rm
+   65  rm lol.txt
+   66  ls lol.txt
+   67  rm -r kill-me/
+   68  ls kill-me/
+   69  man cp
+   70  cp and-then.txt > no-and-then.txt
+   71  cp and-then.txt
+   72  cp and-then.txt no-and-then.txt
+   73  cat and-then.txt no-and-then.txt
+   74  man history
+   75  history
+   76  history > command-history.txt
