@@ -1,9 +1,9 @@
 {
-  "nextId": 7,
+  "nextId": 8,
   "notes": {
     "1": "new guy",
     "2": "Prototypal inheritance is how JavaScript objects delegate behavior.",
-    "4": "updated four",
-    "6": "NEW GUY"
+    "6": "NEW GUY",
+    "7": "NEW Seven"
   }
 }

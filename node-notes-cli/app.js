@@ -1,21 +1,15 @@
 const data = require('./data.json');
 const fs = require('fs');
 
-const notesStringify = JSON.stringify(data.notes, null, 2);
-const objectNotes = JSON.parse(notesStringify);
-
-const dataStringify = JSON.stringify(data, null, 2);
-const dataObject = JSON.parse(dataStringify);
-
 if (process.argv[2] === 'read') {
-  for (const property in objectNotes) {
-    console.log(`${property}: ${objectNotes[property]}`);
+  for (const property in data.notes) {
+    console.log(`${property}: ${data.notes[property]}`);
   }
 } else if (process.argv[2] === 'create') {
-  const currentId = dataObject.nextId - 1;
-  dataObject.notes[currentId + 1] = process.argv[3];
-  dataObject.nextId++;
-  const newObject = JSON.stringify(dataObject, null, 2);
+  const currentId = data.nextId;
+  data.notes[currentId] = process.argv[3];
+  data.nextId++;
+  const newObject = JSON.stringify(data, null, 2);
   fs.writeFile('data.json', newObject, 'utf-8', function (err) {
     if (err) {
       throw err;
@@ -23,8 +17,8 @@ if (process.argv[2] === 'read') {
   });
 } else if (process.argv[2] === 'delete') {
   const id = process.argv[3];
-  delete dataObject.notes[id];
-  const newDeleteObject = JSON.stringify(dataObject, null, 2);
+  delete data.notes[id];
+  const newDeleteObject = JSON.stringify(data, null, 2);
   fs.writeFile('data.json', newDeleteObject, 'utf-8', function (err) {
     if (err) {
       throw err;
@@ -32,8 +26,8 @@ if (process.argv[2] === 'read') {
   });
 } else if (process.argv[2] === 'update') {
   const id = process.argv[3];
-  dataObject.notes[id] = process.argv[4];
-  const newUpdateObject = JSON.stringify(dataObject, null, 2);
+  data.notes[id] = process.argv[4];
+  const newUpdateObject = JSON.stringify(data, null, 2);
   fs.writeFile('data.json', newUpdateObject, 'utf-8', err => {
     if (err) {
       throw err;
