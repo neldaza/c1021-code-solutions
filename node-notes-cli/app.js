@@ -21,4 +21,13 @@ if (process.argv[2] === 'read') {
       throw err;
     }
   });
+} else if (process.argv[2] === 'delete') {
+  const id = process.argv[3];
+  delete dataObject.notes[id];
+  const newDeleteObject = JSON.stringify(dataObject, null, 2);
+  fs.writeFile('data.json', newDeleteObject, 'utf-8', function (err) {
+    if (err) {
+      throw err;
+    }
+  });
 }
