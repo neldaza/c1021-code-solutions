@@ -30,4 +30,13 @@ if (process.argv[2] === 'read') {
       throw err;
     }
   });
+} else if (process.argv[2] === 'update') {
+  const id = process.argv[3];
+  dataObject.notes[id] = process.argv[4];
+  const newUpdateObject = JSON.stringify(dataObject, null, 2);
+  fs.writeFile('data.json', newUpdateObject, 'utf-8', err => {
+    if (err) {
+      throw err;
+    }
+  });
 }
