@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const data = require('./data.json');
+
 const JSONMiddleware = express.json();
 app.use(JSONMiddleware);
 
@@ -21,29 +22,24 @@ app.get('/api/notes/:id', function (req, res) {
     const errorObject = {
       error: 'id must be a positive integer'
     };
+    res.status(400);
     res.send(errorObject);
-    res.sendStatus(400);
     return;
   }
   const array = [];
-  for (const property in data.notes) {
-    if (data.notes[property].id === reqId) {
 
-      array.push(data.notes[property]);
-
-    } else {
-      const cannotFindObject = {
-        error: `cannot find note with id ${reqId}`
-      };
-      res.send(cannotFindObject);
-      res.sendStatus(404);
-
-      return;
-    }
-
-    res.send(array[0]);
-
+  if (!data.notes[reqId]) {
+    const cannotFindObject = {
+      error: `cannot find note with id ${reqId}`
+    };
+    res.send(cannotFindObject);
+    res.sendStatus(404);
+    return;
+  } else {
+    array.push(data.notes[reqId]);
   }
+
+  res.send(array[0]);
 
 });
 let nextId = data.nextId;
