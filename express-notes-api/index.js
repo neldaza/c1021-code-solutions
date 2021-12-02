@@ -94,12 +94,28 @@ app.put('/api/notes/:id', (req, res) => {
   const reqId = Number(req.params.id);
   const reqBody = req.body;
 
-  if (isNaN(reqId) || !reqBody.content) {
+  if (isNaN(reqId)) {
     const fourHundrerErrorObject = {
       error: 'Id must be a positive integer'
     };
     res.status(400);
     res.send(fourHundrerErrorObject);
+  } else if (!reqBody.content) {
+    const errorObject = {
+      error: 'content is a required field'
+    };
+    res.status(400);
+    res.send(errorObject);
+  } else if (!data.notes[reqId]) {
+    const fourHundredFourErrorObject = {
+      error: `cannot find note with id ${reqId}`
+    };
+    res.status(404);
+    res.send(fourHundredFourErrorObject);
+  } else {
+    data.notes[reqId].content = reqBody.content;
+    res.status(200);
+    res.send(data.notes[reqId]);
   }
 
 });
@@ -127,4 +143,8 @@ app.listen(3000, () => {
 // http delete localhost:3000/api/notes/36
 // http delete localhost:3000/api/notes/9
 
+// http put localhost:3000/derp/data.json
 // http put localhost:3000/api/notes/trollolol
+// http put localhost:3000/api/notes/1
+// http put localhost:3000/api/notes/13
+// http put localhost:3000/api/notes/2 content="hello there"
