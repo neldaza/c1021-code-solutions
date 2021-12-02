@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const data = require('./data.json');
+const JSONMiddleware = express.json();
+app.use(JSONMiddleware);
 // require automatically parses
 
 app.get('/api/notes', function (req, res) {
@@ -43,8 +45,32 @@ app.get('/api/notes/:id', function (req, res) {
   }
 
 });
+let nextId = data.nextId;
+
+app.post('/api/notes', function (req, res) {
+  const reqBody = req.body;
+  if (!reqBody.content) {
+    const errorObject = {
+      error: 'content is a required field'
+    };
+    res.status(400);
+    res.send(errorObject);
+  }
+  if (reqBody.content) {
+    reqBody.id = nextId;
+    data.notes[nextId] = reqBody;
+    nextId++;
+    res.status(201);
+    res.send(reqBody);
+  }
+
+});
 
 app.listen(3000, () => {
 // eslint-disable-next-line no-console
   console.log('The server is listening on port 3000!');
 });
+
+// http post localhost:3000/api/notes/ content="Interia is a property of matter"
+// http get localhost:3000/api/notes/2
+// http get localhost:3000/api/notes
