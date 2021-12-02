@@ -65,6 +65,31 @@ app.post('/api/notes', function (req, res) {
   }
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+  const reqId = Number(req.params.id);
+
+  if (isNaN(reqId)) {
+    const fourHundrerErrorObject = {
+      error: 'Id must be a positive integer'
+    };
+    res.status(400);
+    res.send(fourHundrerErrorObject);
+  }
+
+  if (!data.notes[reqId]) {
+    const cannotFindObject = {
+      error: `cannot find note with id ${reqId}`
+    };
+    res.status(404);
+    res.send(cannotFindObject);
+
+  } else {
+    delete data.notes[reqId];
+    res.sendStatus(200);
+  }
+
+});
+
 app.use((req, res, err) => {
   const fiveHundredObject = {
     error: 'An unexpected error occured'
@@ -84,3 +109,6 @@ app.listen(3000, () => {
 // http get localhost:3000/api/notes/2
 // http get localhost:3000/api/notes
 // http post localhost:3000/derp/data.json content="blah"
+// http delete localhost:3000/api/notes/trollolol
+// http delete localhost:3000/api/notes/36
+// http delete localhost:3000/api/notes/9
