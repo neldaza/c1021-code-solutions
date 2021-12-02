@@ -3,6 +3,7 @@ const app = express();
 const data = require('./data.json');
 const JSONMiddleware = express.json();
 app.use(JSONMiddleware);
+
 // require automatically parses
 
 app.get('/api/notes', function (req, res) {
@@ -55,14 +56,22 @@ app.post('/api/notes', function (req, res) {
     };
     res.status(400);
     res.send(errorObject);
-  }
-  if (reqBody.content) {
+  } else if (reqBody.content) {
     reqBody.id = nextId;
     data.notes[nextId] = reqBody;
     nextId++;
     res.status(201);
     res.send(reqBody);
   }
+});
+
+app.use((req, res, err) => {
+  const fiveHundredObject = {
+    error: 'An unexpected error occured'
+  };
+  console.error(err);
+  res.status(500);
+  res.send(fiveHundredObject);
 
 });
 
@@ -74,3 +83,4 @@ app.listen(3000, () => {
 // http post localhost:3000/api/notes/ content="Interia is a property of matter"
 // http get localhost:3000/api/notes/2
 // http get localhost:3000/api/notes
+// http post localhost:3000/derp/data.json content="blah"
