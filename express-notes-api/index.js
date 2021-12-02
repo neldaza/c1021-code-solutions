@@ -15,6 +15,10 @@ app.get('/api/notes', function (req, res) {
 app.get('/api/notes/:id', function (req, res) {
   const reqId = Number(req.params.id);
   if (isNaN(reqId)) {
+    const errorObject = {
+      error: 'id must be a positive integer'
+    };
+    res.send(errorObject);
     res.sendStatus(400);
     return;
   }
@@ -25,7 +29,12 @@ app.get('/api/notes/:id', function (req, res) {
       array.push(data.notes[property]);
 
     } else {
+      const cannotFindObject = {
+        error: `cannot find note with id ${reqId}`
+      };
+      res.send(cannotFindObject);
       res.sendStatus(404);
+
       return;
     }
 
