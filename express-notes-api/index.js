@@ -90,6 +90,20 @@ app.delete('/api/notes/:id', (req, res) => {
 
 });
 
+app.put('/api/notes/:id', (req, res) => {
+  const reqId = Number(req.params.id);
+  const reqBody = req.body;
+
+  if (isNaN(reqId) || !reqBody.content) {
+    const fourHundrerErrorObject = {
+      error: 'Id must be a positive integer'
+    };
+    res.status(400);
+    res.send(fourHundrerErrorObject);
+  }
+
+});
+
 app.use((req, res, err) => {
   const fiveHundredObject = {
     error: 'An unexpected error occured'
@@ -112,3 +126,5 @@ app.listen(3000, () => {
 // http delete localhost:3000/api/notes/trollolol
 // http delete localhost:3000/api/notes/36
 // http delete localhost:3000/api/notes/9
+
+// http put localhost:3000/api/notes/trollolol
