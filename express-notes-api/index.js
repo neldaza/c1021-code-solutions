@@ -19,7 +19,8 @@ app.get('/api/notes', function (req, res) {
 app.get('/api/notes/:id', function (req, res) {
   const reqId = Number(req.params.id);
   if (isNaN(reqId)) {
-    const errorObject = {
+    const errorObject =
+    {
       error: 'id must be a positive integer'
     };
     res.status(400);
@@ -29,11 +30,12 @@ app.get('/api/notes/:id', function (req, res) {
   const array = [];
 
   if (!data.notes[reqId]) {
-    const cannotFindObject = {
+    const cannotFindObject =
+    {
       error: `cannot find note with id ${reqId}`
     };
+    res.status(404);
     res.send(cannotFindObject);
-    res.sendStatus(404);
     return;
   } else {
     array.push(data.notes[reqId]);
@@ -48,7 +50,8 @@ let nextId = data.nextId;
 app.post('/api/notes', function (req, res) {
   const reqBody = req.body;
   if (!reqBody.content) {
-    const errorObject = {
+    const errorObject =
+    {
       error: 'content is a required field'
     };
     res.status(400);
@@ -58,12 +61,18 @@ app.post('/api/notes', function (req, res) {
     data.notes[nextId] = reqBody;
     fs.writeFile('data.json', JSON.stringify(data, null, 2), 'utf-8', function (err) {
       if (err) {
-        throw err;
+        console.error(err);
+        const fiveHundredObject =
+        {
+          error: 'An unexpected error occured'
+        };
+        res.status(500);
+        res.send(fiveHundredObject);
       }
+      nextId++;
+      res.status(201);
+      res.send(reqBody);
     });
-    nextId++;
-    res.status(201);
-    res.send(reqBody);
   }
 });
 
@@ -71,7 +80,8 @@ app.delete('/api/notes/:id', (req, res) => {
   const reqId = Number(req.params.id);
 
   if (isNaN(reqId)) {
-    const fourHundrerErrorObject = {
+    const fourHundrerErrorObject =
+    {
       error: 'Id must be a positive integer'
     };
     res.status(400);
@@ -89,12 +99,17 @@ app.delete('/api/notes/:id', (req, res) => {
     delete data.notes[reqId];
     fs.writeFile('data.json', JSON.stringify(data, null, 2), 'utf-8', function (err) {
       if (err) {
-        throw err;
+        console.error(err);
+        const fiveHundredObject =
+        {
+          error: 'An unexpected error occured'
+        };
+        res.status(500);
+        res.send(fiveHundredObject);
       }
+      res.sendStatus(204);
     });
-    res.sendStatus(200);
   }
-
 });
 
 app.put('/api/notes/:id', (req, res) => {
@@ -123,22 +138,17 @@ app.put('/api/notes/:id', (req, res) => {
     data.notes[reqId].content = reqBody.content;
     fs.writeFile('data.json', JSON.stringify(data, null, 2), 'utf-8', function (err) {
       if (err) {
-        throw err;
+        console.error(err);
+        const fiveHundredObject = {
+          error: 'An unexpected error occured'
+        };
+        res.status(500);
+        res.send(fiveHundredObject);
       }
     });
     res.status(200);
     res.send(data.notes[reqId]);
   }
-
-});
-
-app.use((req, res, err) => {
-  const fiveHundredObject = {
-    error: 'An unexpected error occured'
-  };
-  console.error(err);
-  res.status(500);
-  res.send(fiveHundredObject);
 
 });
 
