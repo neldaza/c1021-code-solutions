@@ -9,13 +9,21 @@
       "id": 5,
       "content": "In JavaScript, the value of `this` is determined when a function is called; not when it is defined."
     },
-    "6": {
-      "id": 6,
-      "content": "A closure is formed when a function retains access to variables in its lexical scope."
+    "10": {
+      "content": "Interia is a property of matter",
+      "id": 10
     },
-    "9": {
-      "id": 9,
-      "content": "Inertia is a property of matter."
+    "11": {
+      "content": "Interia is a property of matter",
+      "id": 11
+    },
+    "12": {
+      "content": "Interia is a property of matter",
+      "id": 12
+    },
+    "13": {
+      "content": "Interia is a property of matter",
+      "id": 13
     }
   }
 }

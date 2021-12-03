@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const data = require('./data.json');
-
+const fs = require('fs');
 const JSONMiddleware = express.json();
 app.use(JSONMiddleware);
 
@@ -42,6 +42,7 @@ app.get('/api/notes/:id', function (req, res) {
   res.send(array[0]);
 
 });
+
 let nextId = data.nextId;
 
 app.post('/api/notes', function (req, res) {
@@ -55,6 +56,11 @@ app.post('/api/notes', function (req, res) {
   } else if (reqBody.content) {
     reqBody.id = nextId;
     data.notes[nextId] = reqBody;
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), 'utf-8', function (err) {
+      if (err) {
+        throw err;
+      }
+    });
     nextId++;
     res.status(201);
     res.send(reqBody);
@@ -81,6 +87,11 @@ app.delete('/api/notes/:id', (req, res) => {
 
   } else {
     delete data.notes[reqId];
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), 'utf-8', function (err) {
+      if (err) {
+        throw err;
+      }
+    });
     res.sendStatus(200);
   }
 
@@ -110,6 +121,11 @@ app.put('/api/notes/:id', (req, res) => {
     res.send(fourHundredFourErrorObject);
   } else {
     data.notes[reqId].content = reqBody.content;
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), 'utf-8', function (err) {
+      if (err) {
+        throw err;
+      }
+    });
     res.status(200);
     res.send(data.notes[reqId]);
   }
@@ -134,6 +150,7 @@ app.listen(3000, () => {
 // http post localhost:3000/api/notes/ content="Interia is a property of matter"
 // http get localhost:3000/api/notes/2
 // http get localhost:3000/api/notes
+// http post localhost:3000/api/notes content="Hey there new post has been submitted"
 // http post localhost:3000/derp/data.json content="blah"
 // http delete localhost:3000/api/notes/trollolol
 // http delete localhost:3000/api/notes/36
