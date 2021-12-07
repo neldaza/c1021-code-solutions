@@ -55,11 +55,12 @@ app.post('/api/grades', (req, res) => {
     const sql = `
   insert into "grades" ("name", "course", "score")
   values ($1, $2, $3)
+  returning *;
  `;
     db.query(sql, post)
       .then(result => {
         res.status(201);
-        res.send(req.body);
+        res.send(result.rows[0]);
       })
       .catch(err => {
         console.error(err);
