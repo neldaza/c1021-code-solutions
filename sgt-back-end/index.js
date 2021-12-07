@@ -119,6 +119,39 @@ app.put('/api/grades/:gradeId', (req, res) => {
   }
 });
 
+app.delete('/api/grades/:gradeId', (req, res) => {
+  const gradeId = Number(req.params.gradeId);
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    res.status(400).json({
+      error: '"gradeId" must be a positive integer'
+    });
+  } else {
+    const sql = `
+    delete from "grades"
+    where "gradeId" = $1
+    returning *;
+    `;
+    const deleteId = [gradeId];
+    db.query(sql, deleteId)
+      .then(result => {
+        const gradeDeletedResult = result.rows[0];
+        if (!gradeDeletedResult) {
+          res.status(404).json({
+            error: `Cannot find grade with gradeId ${gradeId}`
+          });
+        } else {
+          res.sendStatus(204);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'An unexpected error occurred.'
+        });
+      });
+  }
+});
+
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('The server is listening on port 3000!');
@@ -127,3 +160,4 @@ app.listen(3000, () => {
 // http get localhost:3000/api/grades
 // http post localhost:3000/api/grades name="John Smith" course="Biology" score=97
 // http put localhost:3000/api/grades/1 name="Rick Sanchez" course="Rick and Morty" score=99
+// http delete localhost:3000/api/grades/1
