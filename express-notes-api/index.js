@@ -106,6 +106,7 @@ app.delete('/api/notes/:id', (req, res) => {
         };
         res.status(500);
         res.send(fiveHundredObject);
+        return;
       }
       res.sendStatus(204);
     });
@@ -144,12 +145,12 @@ app.put('/api/notes/:id', (req, res) => {
         };
         res.status(500);
         res.send(fiveHundredObject);
+        return;
       }
+      res.status(200);
+      res.send(data.notes[reqId]);
     });
-    res.status(200);
-    res.send(data.notes[reqId]);
   }
-
 });
 
 app.listen(3000, () => {
