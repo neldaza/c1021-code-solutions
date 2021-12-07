@@ -68,6 +68,7 @@ app.post('/api/notes', function (req, res) {
         };
         res.status(500);
         res.send(fiveHundredObject);
+        return;
       }
       nextId++;
       res.status(201);
@@ -86,6 +87,7 @@ app.delete('/api/notes/:id', (req, res) => {
     };
     res.status(400);
     res.send(fourHundrerErrorObject);
+    return;
   }
 
   if (!data.notes[reqId]) {
