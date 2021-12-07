@@ -8,6 +8,7 @@ const db = new pg.Pool({
 const express = require('express');
 const app = express();
 const JSONMiddleware = express.json();
+
 app.use(JSONMiddleware);
 
 app.get('/api/grades', (req, res) => {
@@ -37,29 +38,28 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.post('/api/grades', (req, res) => {
-  const array = [];
-  array.push(req.body.content);
-  var JSONObject = array[0];
-  if (!JSONObject || !JSONObject.name || !JSONObject.course || !JSONObject.score ||
-    isNaN(JSONObject.score) || JSONObject.score <= 100) {
+  const grade = req.body;
+  const gradeScore = req.body.score;
+  if (!grade || isNaN(gradeScore) || gradeScore > 100) {
     const errorObject =
     {
       error: 'content is a required field'
     };
     res.status(400);
     res.send(errorObject);
-
   } else {
-    const reqBody = req.body.content;
+    const name = req.body.name;
+    const course = req.body.course;
+    const score = req.body.score;
+    const post = [name, course, score];
     const sql = `
- insert into "grades" ("name", "course", "score")
+  insert into "grades" ("name", "course", "score")
+  values ($1, $2, $3)
  `;
-    const values = [reqBody];
-
-    db.query(sql, values)
+    db.query(sql, post)
       .then(result => {
         res.status(201);
-        res.send(result.rows[0]);
+        res.send(req.body);
       })
       .catch(err => {
         console.error(err);
@@ -76,4 +76,4 @@ app.listen(3000, () => {
 });
 
 // http get localhost:3000/api/grades
-// http post localhost:3000/api/grades
+// http post localhost:3000/api/grades name="John Smith" course="Biology" score=97
