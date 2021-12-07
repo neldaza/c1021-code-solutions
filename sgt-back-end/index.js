@@ -70,6 +70,55 @@ app.post('/api/grades', (req, res) => {
   }
 });
 
+app.put('/api/grades/:gradeId', (req, res) => {
+  const gradeId = Number(req.params.gradeId);
+  const grade = req.body;
+  const gradeScore = req.body.score;
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    res.status(400).json({
+      error: '"gradeId" must be a positive integer'
+    });
+  } else if (!grade || isNaN(gradeScore) || gradeScore > 100) {
+    const errorObject =
+    {
+      error: 'content is a required field'
+    };
+    res.status(400);
+    res.send(errorObject);
+  } else {
+    const sql = `
+    update "grades"
+       set "name" = $2,
+           "course" = $3,
+           "score" = $4
+     where "gradeId" = $1
+     returning *
+  `;
+    const name = req.body.name;
+    const course = req.body.course;
+    const score = req.body.score;
+    const put = [gradeId, name, course, score];
+    db.query(sql, put)
+      .then(result => {
+        const gradeUpdateResult = result.rows[0];
+        if (!gradeUpdateResult) {
+          res.status(404).json({
+            error: `Cannot find grade with gradeId ${gradeId}`
+          });
+        }
+        res.status(200);
+        res.send(gradeUpdateResult);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'An unexpected error occurred.'
+        });
+      });
+
+  }
+});
+
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('The server is listening on port 3000!');
@@ -77,3 +126,4 @@ app.listen(3000, () => {
 
 // http get localhost:3000/api/grades
 // http post localhost:3000/api/grades name="John Smith" course="Biology" score=97
+// http put localhost:3000/api/grades/1 name="Rick Sanchez" course="Rick and Morty" score=99
