@@ -19,22 +19,9 @@ const greaterThanFive = numbers.filter(number => number > 5);
 console.log(greaterThanFive);
 
 // eslint-disable-next-line array-callback-return
-const startsWithE = names.filter(name => {
-  for (var i = 0; i < names.length; i++) {
-    if (name.startsWith('E')) {
-      return name;
-    }
-  }
-});
+const startsWithE = names.filter(name => name.toLowerCase().startsWith('e'));
 console.log(startsWithE);
 
 // eslint-disable-next-line array-callback-return
-const haveD = names.filter(name => {
-  for (var i = 0; i < names.length; i++) {
-    if (name.includes('d') || name.includes('D') === true) {
-      return name;
-    }
-  }
-});
-
+const haveD = names.filter(name => name.toLowerCase().includes('d'));
 console.log(haveD);
