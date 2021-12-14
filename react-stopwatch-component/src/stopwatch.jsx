@@ -8,8 +8,7 @@ class Stopwatch extends React.Component {
       pausedOrPlay: 'play'
     };
     this.handleTick = this.handleTick.bind(this);
-    this.updateSeconds = this.updateSeconds.bind(this);
-
+    this.reset = this.reset.bind(this);
   }
 
   updateSeconds() {
@@ -19,6 +18,7 @@ class Stopwatch extends React.Component {
   }
 
   handleTick() {
+    // eslint-disable-next-line no-unused-vars
     const timerId = null;
 
     if (this.state.pausedOrPlay === 'pause') {
@@ -30,12 +30,18 @@ class Stopwatch extends React.Component {
     }
   }
 
+  reset() {
+    if (this.state.pausedOrPlay === 'play') {
+      this.setState({ seconds: 0 });
+    }
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="column-full text-align-center">
-            <div className="circle">
+            <div className="circle" onClick={this.reset}>
               <p className="secondsPassed">{this.state.seconds}</p>
             </div>
             <i className={`fas fa-${this.state.pausedOrPlay} personal-play`}
