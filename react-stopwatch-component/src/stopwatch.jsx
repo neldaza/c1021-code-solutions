@@ -19,9 +19,15 @@ class Stopwatch extends React.Component {
   }
 
   handleTick() {
-    this.setState({
-      seconds: setInterval(this.updateSeconds, 1000)
-    });
+    const timerId = null;
+
+    if (this.state.pausedOrPlay === 'pause') {
+      this.setState({ pausedOrPlay: 'play' });
+      clearInterval(this.timerId);
+    } else {
+      this.setState({ pausedOrPlay: 'pause' });
+      this.timerId = setInterval(() => { this.setState({ seconds: this.state.seconds + 1 }); }, 1000);
+    }
   }
 
   render() {
@@ -32,7 +38,8 @@ class Stopwatch extends React.Component {
             <div className="circle">
               <p className="secondsPassed">{this.state.seconds}</p>
             </div>
-            <i className="fas fa-play personal-play" onClick={this.handleTick}></i>
+            <i className={`fas fa-${this.state.pausedOrPlay} personal-play`}
+            onClick={this.handleTick}></i>
           </div>
         </div>
       </div>
