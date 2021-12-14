@@ -34,7 +34,7 @@ class ToggleSwitch extends React.Component {
     const currentLightIcon = this.switchLightIcon();
     return (
       <div className={`flex align-items-center ${currentBackgroundColor}`}>
-        <i className={`fas fa-toggle-${currentLightIcon}`} onClick={this.toggle}></i>
+        <i className={`light-icon-${currentLightIcon} fas fa-toggle-${currentLightIcon}`} onClick={this.toggle}></i>
         <p>{this.state.light}</p>
       </div>
     );
