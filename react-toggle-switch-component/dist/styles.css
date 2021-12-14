@@ -1,0 +1,23 @@
+i {
+  font-size: 20pt;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.background-color-off {
+  background-color: grey;
+}
+
+.light-icon-on {
+  color: green;
+}
+
+.light-icon-off {
+  color: black;
+}
