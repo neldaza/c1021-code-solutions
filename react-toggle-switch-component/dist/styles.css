@@ -1,0 +1,23 @@
+i {
+  font-size: 20pt;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.background-color-off {
+  background-color: grey;
+}
+
+.fa-toggle-on {
+  color: green;
+}
+
+.fa-toggle-off {
+  color: black;
+}
