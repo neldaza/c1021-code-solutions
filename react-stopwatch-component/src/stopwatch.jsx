@@ -18,9 +18,6 @@ class Stopwatch extends React.Component {
   }
 
   handleTick() {
-    // eslint-disable-next-line no-unused-vars
-    const timerId = null;
-
     if (this.state.pausedOrPlay === 'pause') {
       this.setState({ pausedOrPlay: 'play' });
       clearInterval(this.timerId);
