@@ -15,6 +15,11 @@ class AppDrawer extends React.Component {
               <i className="tab-icon fas fa-align-justify"></i>
             </div>
           </div>
+          <div className="row tab">
+            <div className="column-full">
+              <p></p>
+            </div>
+          </div>
         </div>
       </div>
     );
