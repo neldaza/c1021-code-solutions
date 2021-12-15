@@ -3,21 +3,35 @@ import React from 'react';
 class AppDrawer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isClosed: 'yes' };
+    this.state = { isHidden: 'hidden' };
+    this.viewModal = this.viewModal.bind(this);
+  }
+
+  viewModal() {
+    if (this.state.isHidden === 'hidden') {
+      this.setState({ isHidden: 'view' });
+      return 'view';
+    } else {
+      this.setState({ isHidden: 'hidden' });
+      return 'hidden';
+    }
   }
 
   render() {
     return (
       <div>
         <div className="container">
-          <div className="row">
+          <div className="row tab-button">
             <div className="column">
-              <i className="tab-icon fas fa-align-justify"></i>
+              <i className="tab-icon fas fa-align-justify" onClick={this.viewModal}></i>
             </div>
           </div>
-          <div className="row tab">
+          <div className={`row tab ${this.state.isHidden}`}>
             <div className="column-full">
-              <p></p>
+              <h1>Menu</h1>
+              <p className="index-p"><a>About</a></p>
+              <p className="index-p"><a>Get Started</a></p>
+              <p className="index-p"><a>Sign In</a></p>
             </div>
           </div>
         </div>
