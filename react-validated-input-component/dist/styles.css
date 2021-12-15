@@ -1,0 +1,38 @@
+.hidden {
+  display: none !important;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.password-p {
+  margin-block: unset;
+  margin-bottom: 0.5rem;
+}
+
+.input-and-i {
+  align-items: center;
+}
+
+.icon-times {
+  margin-left: 0.5rem;
+  color: red;
+}
+
+.icon-check {
+  margin-left: 0.5rem;
+  color: green;
+}
+
+.password-required {
+  margin-block: unset;
+  color: red;
+  font-size: 11pt;
+  margin-top: 0.5rem;
+}
+
+input[type="password"] {
+  font-size: 10pt;
+}
