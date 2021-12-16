@@ -50,9 +50,13 @@ export default class App extends React.Component {
         response.json();
       })
       .then(result => {
-        const newArray = this.state.todos.push(result);
-        const freshGuy = this.state.todos.concat(newArray);
-        this.setState({ todos: freshGuy });
+        const currentTodos = this.state.todos;
+        const currentTodosWithSubmission = this.state.todos.push(result);
+        var console;
+        console.log(currentTodos);
+        console.log(currentTodosWithSubmission);
+        const fresh = currentTodos.concat(result);
+        console.log(fresh);
 
       });
   }
