@@ -33,7 +33,25 @@
   left: -5px;
   top: -3px;
   background-color: white;
-  transition: transform 0.15s ease;
+  transform: translateX(-22.5rem);
+  transition: transform 0.25s ease;
+}
+
+.tab-out {
+  display: flex;
+  justify-content: left;
+  width: 20rem;
+  padding-left: 2rem;
+  border-style: solid;
+  border-color: black;
+  height: inherit;
+  position: fixed;
+  bottom: 0;
+  left: -5px;
+  top: -3px;
+  background-color: white;
+  transition: transform 0.25s ease;
+  transform: translateX(0);
 }
 
 .index-p {
