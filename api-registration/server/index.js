@@ -36,7 +36,12 @@ app.post('/api/auth/sign-up', (req, res, next) => {
       db.query(sql, post)
         .then(result => {
           res.status(201);
-          res.send(result.rows[0]);
+          const resultObject = result.rows[0];
+          const emptyObject = {};
+          emptyObject.username = resultObject.username;
+          emptyObject.createdAt = resultObject.createdAt;
+          emptyObject.userId = resultObject.userId;
+          res.send(emptyObject);
         })
         .catch(err => next(err));
     })
