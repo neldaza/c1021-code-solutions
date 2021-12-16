@@ -47,17 +47,10 @@ export default class App extends React.Component {
       body: JSON.stringify(newTodo)
     })
       .then(response => {
-        response.json();
-      })
-      .then(result => {
-        const currentTodos = this.state.todos;
-        const currentTodosWithSubmission = this.state.todos.push(result);
-        var console;
-        console.log(currentTodos);
-        console.log(currentTodosWithSubmission);
-        const fresh = currentTodos.concat(result);
-        console.log(fresh);
-
+        response.json().then(result => {
+          const currentTodosWithSubmission = this.state.todos.concat(result);
+          this.setState({ todos: currentTodosWithSubmission });
+        });
       });
   }
 
