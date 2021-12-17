@@ -91,11 +91,13 @@ export default class App extends React.Component {
         response.json()
           .then(result => {
 
-            for (var a = 0; a < this.state.todos.length; a++) {
+            for (let a = 0; a < this.state.todos.length; a++) {
               if (result.todoId === this.state.todos[a].todoId) {
-                const arrayWithOGSlicedOff = this.state.todos.slice(a, a - 1);
-                const resultArray = arrayWithOGSlicedOff.concat(result);
-                this.setState({ todos: resultArray });
+                result.isCompleted = true;
+                const seperateTodosArray = this.state.todos.slice();
+                seperateTodosArray.splice(a, 1, result);
+                this.setState({ todos: seperateTodosArray });
+
               }
             }
           });
