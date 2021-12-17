@@ -77,6 +77,7 @@ export default class App extends React.Component {
     for (var i = 0; i < this.state.todos.length; i++) {
       if (todoId === this.state.todos[i].todoId) {
         newObject = this.state.todos[i];
+        newObject.isCompleted = true;
       }
     }
 
@@ -93,11 +94,9 @@ export default class App extends React.Component {
 
             for (let a = 0; a < this.state.todos.length; a++) {
               if (result.todoId === this.state.todos[a].todoId) {
-                result.isCompleted = true;
                 const seperateTodosArray = this.state.todos.slice();
                 seperateTodosArray.splice(a, 1, result);
                 this.setState({ todos: seperateTodosArray });
-
               }
             }
           });
