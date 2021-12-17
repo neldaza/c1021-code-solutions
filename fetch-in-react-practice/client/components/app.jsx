@@ -76,8 +76,18 @@ export default class App extends React.Component {
     let newObject = null;
     for (var i = 0; i < this.state.todos.length; i++) {
       if (todoId === this.state.todos[i].todoId) {
-        newObject = this.state.todos[i];
-        newObject.isCompleted = true;
+        newObject = {
+          todoId: this.state.todos[i].todoId,
+          task: this.state.todos[i].task,
+          isCompleted: this.state.todos[i].isCompleted,
+          createdAt: this.state.todos[i].createdAt,
+          updatedAt: this.state.todos[i].updatedAt
+        };
+        if (newObject.isCompleted === true) {
+          newObject.isCompleted = false;
+        } else {
+          newObject.isCompleted = true;
+        }
       }
     }
 
