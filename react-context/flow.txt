@@ -69,11 +69,33 @@ is called with the resulting stringified response as an argument which is handle
 
 
 
-
-
-
 3. User can stay signed in (even if they refresh the page):
 
-
+THE ACTION:
+-The client refreshes the page while signed in
+|
+V
+THE CODE:
+- which delegates to the componentDidMount() method on line 23 of app.jsx, that determines the current page and status of
+the user signed in by getting the current token value in local storage and running the decodeToken function on it
+- if the decodeToken function is able to run cleanly, that means there is still a user present because of the token's
+continued presence in local storage thus
+|
+V
+THE OUTCOME:
+-The client stays signed in regardless of refresh
 
 4. User can sign out
+
+THE ACTION:
+- the client clicks the sign out button which has a click event listener with the handleSignOut method as it's callback
+
+
+THE CODE:
+- the action is delegated to the handleSignOut method on line 40 of app.jsx
+- which removes the 'react-context-jwt' item out of local storage (removes the token and signature)
+- and sets the current state of user back to its original "null"
+- which then triggers the window to redirect to its "sign-in" appearance as there is no longer any context for users
+
+THE OUTCOME:
+-The client is logged out
