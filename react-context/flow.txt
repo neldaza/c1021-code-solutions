@@ -1,0 +1,79 @@
+1. User can sign up:
+
+THE ACTION:
+-Since the action prop's value of 'sign up' equates to truthy(which means it is present),
+alternatActionText's value in auth-form.jsx is set 'Register Now' which allows the user to click it because of the React
+element type <a>'s href prop which dictates the hash path to the signup page
+**OR the user can simply click the permanent Navbar 'Sign Up' anchor**
+- The user's signup input is delegated to auth-form.jsx,
+- where upon submission of the input, the following fetch request with method: POST is sent with the following behavior
+|
+V
+THE REQUEST:
+- the client makes a post request to the server using the '/api/auth/${action}' path on line 45 of server/index.js,
+  the current path is thus '/api/auth/sign-up because of the logic on lines 32 and 33 of auth-form.jsx as well as lines 41 - 51
+  in auth-form.jsx that dictate action's value based off the current correspondence to the page's hashes
+-the first and second properties of the req.body are destrutured and assigned to const variables username and password,
+-if the username or password aren't present in the req.body, a client error is thrown
+-if both are present, the server calls the hash method of the argon2 object with variable password as an argument,
+-once the asynchronous hash method has sucessfully finished being called, the hashed password variable is THEN stored into
+the database using the "insert" SQL operator along with the username
+- and upon successful completion of the previous then, the first index of the result.rows array is assigned to const variable
+user
+- and the client is greeted with a successful 201 status code and a JSON rendition of the user variable by the server
+* if any errors are returned by any of the previous processes, it is passed to the app's errorMiddleware using the next()
+function with err as an argument
+|
+V
+THE OUTCOME:
+-then upon successful retrieval of the response from the network request back in auth-form.jsx (line 30),
+the server stringifies the response,
+-THEN upon successful stringification of the response, the server detects the current value of action('sign up')
+of the webpage and brings the client back to the sign-in page, thus closing out the sign-up process.
+
+
+2. User can sign in:
+
+THE ACTION:
+-The user inputs their username and password in the auth form, which is then picked up by the handleChange method in
+auth-form.jsx (line 14)
+- Once the log in form is completed the user clicks the 'Log In' button which triggers the server to call the handleSubmit
+method on the form with the username and password inputs passed as data for the form which then triggers a fetch 'POST'
+request within the handleSubmit method with the following behavior
+|
+V
+THE REQUEST:
+- the client makes a post request to the server using the '/api/auth/${action}' path on line 45 of server/index.js,
+  the current path is thus '/api/auth/sign-in because of the logic on lines 32 and 33 of auth-form.jsx as well as lines 41 - 51
+  in auth-form.jsx that dictate action's value because of the current correspondence to the page's hashes
+- the first and second properties of the req.body are destructured and assigned to const variables username and password
+- if neither the username or password are present, a client error is thrown by the server
+- otherwise, the database is queried by the server using the select operator to access the user info of the client's given
+username
+- if no such user exists, the server throws an invalid login error
+- otherwise, the server calls the verify method of the argon2 object using variables hashedPassword andpassword as arguments
+to confirm the validity of the client's login by comparing the SALT of both
+- if the client's password doesnt match the hashed password located in the database, the server throws a client error
+- otherwise, the server responds to the client with a payload object containing a verification token returned from the sign method
+of the jwt object as well as the verified user's ID and username
+|
+V
+THE OUTCOME:
+- upon successful completion of the previous fetch, the server JSON stringifies the response,
+- THEN upon successful stringification of the previous response, the server determines the current value of action,
+- and since action's current value is 'sign up', the onSignIn **handleSignIn()** method of the props property of this object
+is called with the resulting stringified response as an argument which is handled on line 34 of app.jsx
+- the server then destructures the first and second properties of the result object and assign them to variables user and token
+- and puts the token variable into local storage by creating a directory named 'react-context-jwt' and assigning token to it
+- and sets the current state of this.user to the value of the previous destructured user variable thus completing the sign-in process
+
+
+
+
+
+
+3. User can stay signed in (even if they refresh the page):
+
+
+
+4. User can sign out
