@@ -27,8 +27,8 @@ function with err as an argument
 V
 THE OUTCOME:
 -then upon successful retrieval of the response from the network request back in auth-form.jsx (line 30),
-the server stringifies the response,
--THEN upon successful stringification of the response, the server detects the current value of action('sign up')
+the clientside stringifies the response,
+-THEN upon successful stringification of the response, the clientside detects the current value of action('sign up')
 of the webpage and brings the client back to the sign-in page, thus closing out the sign-up process.
 
 
@@ -59,7 +59,7 @@ of the jwt object as well as the verified user's ID and username
 |
 V
 THE OUTCOME:
-- upon successful completion of the previous fetch, the server JSON stringifies the response,
+- upon successful completion of the previous fetch, the client parses the JSON response,
 - THEN upon successful stringification of the previous response, the server determines the current value of action,
 - and since action's current value is 'sign up', the onSignIn **handleSignIn()** method of the props property of this object
 is called with the resulting stringified response as an argument which is handled on line 34 of app.jsx
