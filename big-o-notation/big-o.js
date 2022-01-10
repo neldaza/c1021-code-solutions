@@ -31,9 +31,9 @@ function uniqueQuadratic(words) {
       c < i;                        // 1 * n = O(1)n ~= O(n)
       c++                           // 2 * 1 = O(2)
     ) {
-      const comparing = words[c];   // 3 * n = O(3)n ~= O(n)
-      if (comparing === word) {     // 3 * 1 = O(3)
-        isUnique = false;           // 3 * 1 = O(1)
+      const comparing = words[c];   // 3 * n * n = O(3)n^2 ~= O(n^2)
+      if (comparing === word) {     // 3 * n * n = O(3)n^2 ~= O(n^2)
+        isUnique = false;           // 3 * n * n = O(3)n^2 ~= O(n^2)
       }
     }
     if (isUnique) {                 // 1 * 1 = O(1)
@@ -41,4 +41,4 @@ function uniqueQuadratic(words) {
     }
   }
   return unique;                    // 1 * 1 = O(1)
-} // Big O Notation for uniqueQuadratic: O(1)
+} // Big O Notation for uniqueQuadratic: O(n^2)
