@@ -7,9 +7,6 @@
 // 6. push array[i] to finalArray array
 // 7. return finalArray
 function reverse(array) {
-  if (array === []) {
-    return [];
-  }
   var finalArray = [];
 
   for (var i = array.length - 1; i >= 0; i--) {

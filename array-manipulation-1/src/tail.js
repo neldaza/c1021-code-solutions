@@ -8,9 +8,6 @@
 // 7. push the array at index to newArray
 // 8. return newArray (output)
 function tail(array) {
-  if (array === []) {
-    return [];
-  }
   var newArray = [];
   for (var i = 1; i < array.length; i++) {
     newArray.push(array[i]);

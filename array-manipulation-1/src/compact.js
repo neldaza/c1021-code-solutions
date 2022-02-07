@@ -11,9 +11,6 @@
 // 10. return new Array
 
 function compact(array) {
-  if (array === []) {
-    return [];
-  }
   var falsy;
   var newArray = [];
   for (var i = 0; i < array.length; i++) {
