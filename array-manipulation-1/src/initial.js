@@ -9,9 +9,6 @@
 // 8. push array at i to newArray
 // 9. return newArray (output)
 function initial(array) {
-  if (array === []) {
-    return [];
-  }
   var newArray = [];
 
   for (var i = 0; i < array.length; i++) {
