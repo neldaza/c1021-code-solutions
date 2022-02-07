@@ -1,10 +1,16 @@
 /* exported truncate */
 function truncate(length, string) {
-  for (var i = 0; i < string.length; i++) {
-    if (string[length]) {
-      string.splice(string[length], string.length);
-      string.append('...');
+  let newString = string.slice(0, length);
+
+  for (let a = 0; a < newString.length; a++) {
+    const lastIndex = newString.length - 1;
+    if (newString[lastIndex] === ' ') {
+      let final = newString.slice(0, lastIndex);
+      final += '...';
+      return final;
     }
   }
-  return string;
+
+  newString += '...';
+  return newString;
 }
