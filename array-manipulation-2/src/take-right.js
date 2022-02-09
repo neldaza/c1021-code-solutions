@@ -1,16 +1,13 @@
 /* exported takeRight */
 function takeRight(array, count) {
+  const arrayCopy = array;
   const newArray = [];
-  const finalArray = [];
-  for (let i = array.length - 1; i >= 0; i--) {
-    if (newArray.length === count) {
-      for (var a = newArray.length - 1; a >= 0; a--) {
-        finalArray.push(newArray[a]);
-      }
-      return finalArray;
-    } else {
-      newArray.push(array[i]);
+  for (let i = arrayCopy.length - 1; i >= arrayCopy.length - count; i--) {
+    if (arrayCopy[i] !== undefined) {
+      newArray.push(arrayCopy[i]);
     }
   }
-  return [];
+
+  newArray.reverse();
+  return newArray;
 }
