@@ -1,10 +1,9 @@
 /* exported takeRight */
 function takeRight(array, count) {
-  const arrayCopy = array;
   const newArray = [];
-  for (let i = arrayCopy.length - 1; i >= arrayCopy.length - count; i--) {
-    if (arrayCopy[i] !== undefined) {
-      newArray.push(arrayCopy[i]);
+  for (let i = array.length - 1; i >= array.length - count; i--) {
+    if (array[i] !== undefined) {
+      newArray.push(array[i]);
     }
   }
 
