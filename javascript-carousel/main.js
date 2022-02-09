@@ -39,54 +39,24 @@ function circleIndex(event) {
   timerId = setInterval(updatingPicture, 3000);
 }
 
-function lastPicture(event) {
+function arrowPicture(event) {
   clearInterval(timerId);
-  if (currentImage === 0) {
-    currentImage = imageSrcArray.length - 1;
-    $img.setAttribute('src', imageSrcArray[currentImage]);
-    $img.setAttribute('data-image-index', currentImage);
-    for (let i = 0; i < $circleSelectorAll.length; i++) {
-      if (parseInt($circleSelectorAll[i].getAttribute('data-image-index')) === parseInt($img.getAttribute('data-image-index'))) {
-        $circleSelectorAll[i].className = 'circle circle-background';
-      } else {
-        $circleSelectorAll[i].className = 'circle';
-      }
-    }
-    timerId = setInterval(updatingPicture, 3000);
-    return;
-  }
-  currentImage = parseInt($img.getAttribute('data-image-index')) - 1;
-  $img.setAttribute('src', imageSrcArray[currentImage]);
-  $img.setAttribute('data-image-index', parseInt($img.getAttribute('data-image-index')) - 1);
-  for (let i = 0; i < $circleSelectorAll.length; i++) {
-    if (parseInt($circleSelectorAll[i].getAttribute('data-image-index')) === parseInt($img.getAttribute('data-image-index'))) {
-      $circleSelectorAll[i].className = 'circle circle-background';
-    } else {
-      $circleSelectorAll[i].className = 'circle';
-    }
-  }
-  timerId = setInterval(updatingPicture, 3000);
-}
 
-function nextPicture(event) {
-  clearInterval(timerId);
-  if (currentImage === imageSrcArray.length - 1) {
+  if (event.target.className === 'arrow left relative-fifty previous-arrow' && currentImage === 0) {
+    currentImage = imageSrcArray.length - 1;
+    $img.setAttribute('data-image-index', `${currentImage}`);
+  } else if (event.target.className === 'arrow right relative-fifty next-arrow' && currentImage === imageSrcArray.length - 1) {
     currentImage = 0;
-    $img.setAttribute('src', imageSrcArray[currentImage]);
-    $img.setAttribute('data-image-index', currentImage);
-    for (let i = 0; i < $circleSelectorAll.length; i++) {
-      if (parseInt($circleSelectorAll[i].getAttribute('data-image-index')) === parseInt($img.getAttribute('data-image-index'))) {
-        $circleSelectorAll[i].className = 'circle circle-background';
-      } else {
-        $circleSelectorAll[i].className = 'circle';
-      }
-    }
-    timerId = setInterval(updatingPicture, 3000);
-    return;
+    $img.setAttribute('data-image-index', `${currentImage}`);
+  } else if (event.target.className === 'arrow right relative-fifty next-arrow') {
+    currentImage = parseInt($img.getAttribute('data-image-index')) + 1;
+    $img.setAttribute('data-image-index', parseInt($img.getAttribute('data-image-index')) + 1);
+  } else if (event.target.className === 'arrow left relative-fifty previous-arrow') {
+    currentImage = parseInt($img.getAttribute('data-image-index')) - 1;
+    $img.setAttribute('data-image-index', parseInt($img.getAttribute('data-image-index')) - 1);
   }
-  currentImage = parseInt($img.getAttribute('data-image-index')) + 1;
+
   $img.setAttribute('src', imageSrcArray[currentImage]);
-  $img.setAttribute('data-image-index', parseInt($img.getAttribute('data-image-index')) + 1);
   for (let i = 0; i < $circleSelectorAll.length; i++) {
     if (parseInt($circleSelectorAll[i].getAttribute('data-image-index')) === parseInt($img.getAttribute('data-image-index'))) {
       $circleSelectorAll[i].className = 'circle circle-background';
@@ -101,7 +71,7 @@ for (let b = 0; b < $circleSelectorAll.length; b++) {
   $circleSelectorAll[b].addEventListener('click', circleIndex);
 }
 
-$nextArrow.addEventListener('click', nextPicture);
-$previousArrow.addEventListener('click', lastPicture);
+$nextArrow.addEventListener('click', arrowPicture);
+$previousArrow.addEventListener('click', arrowPicture);
 
 timerId = setInterval(updatingPicture, 3000);
