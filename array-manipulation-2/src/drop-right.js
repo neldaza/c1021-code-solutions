@@ -1,15 +1,11 @@
 /* exported dropRight */
 function dropRight(array, count) {
+  const arrayCopy = array.slice();
   const newArray = [];
-  const finalArray = [];
-  for (let i = array.length - 1; i >= 0; i--) {
-    newArray.push(array[i]);
+
+  for (let i = 0; i < arrayCopy.length - count; i++) {
+    newArray.push(arrayCopy[i]);
   }
 
-  const secondArray = newArray.slice(count);
-  for (let a = secondArray.length - 1; a >= 0; a--) {
-    finalArray.push(secondArray[a]);
-  }
-
-  return finalArray;
+  return newArray;
 }
