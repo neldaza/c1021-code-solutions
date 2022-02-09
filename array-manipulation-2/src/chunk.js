@@ -7,11 +7,7 @@ function chunk(array, size) {
   for (let i = 0; i < arrayCopy.length; i++) {
     if (currentChunk.length < size) {
       currentChunk.push(arrayCopy[i]);
-    } else if (i === size) {
-      finalChunk.push(currentChunk);
-      currentChunk = [];
-      currentChunk.push(arrayCopy[i]);
-    } else if (i % size === 0) {
+    } else if (i === size || i % size === 0) {
       finalChunk.push(currentChunk);
       currentChunk = [];
       currentChunk.push(arrayCopy[i]);
