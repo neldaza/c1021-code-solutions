@@ -3,30 +3,43 @@ import React from 'react';
 class AppDrawer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isHidden: 'hidden' };
+    this.state = { isOpen: 'no' };
     this.viewModal = this.viewModal.bind(this);
     this.renderModal = this.renderModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.greyBackground = this.greyBackground.bind(this);
   }
 
   viewModal() {
-    if (this.state.isHidden === 'hidden') {
-      this.setState({ isHidden: 'view' });
+    if (this.state.isOpen === 'no') {
+      this.setState({ isOpen: 'yes' });
     } else {
-      this.setState({ isHidden: 'hidden' });
-      return '';
+      this.setState({ isOpen: 'no' });
+    }
+  }
+
+  closeModal() {
+    if (this.state.isOpen === 'yes') {
+      this.setState({ isOpen: 'no' });
     }
   }
 
   renderModal() {
-    if (this.state.isHidden === 'hidden') { return ''; }
-    if (this.state.isHidden === 'view') { return '-out'; }
+    if (this.state.isOpen === 'no') { return ''; }
+    if (this.state.isOpen === 'yes') { return '-out'; }
+  }
+
+  greyBackground() {
+    if (this.state.isOpen === 'yes') { return 'grey-background'; }
+    if (this.state.isOpen === 'no') { return ''; }
   }
 
   render() {
     const outOrIn = this.renderModal();
+    const greyBackground = this.greyBackground();
     return (
-      <div>
-        <div className="container">
+      <div className={`vh-100 ${greyBackground}`} onClick={this.closeModal}>
+        <div className='container'>
           <div className="row tab-button">
             <div className="column">
               <i className="tab-icon fas fa-align-justify" onClick={this.viewModal}></i>
