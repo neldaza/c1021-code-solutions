@@ -11,8 +11,3 @@ function omit(source, keys) {
   }
   return sourceCopy;
 }
-
-// for (const [key] of Object.entries(source)) {
-//   if (key === keys[i]) {
-//     delete sourceCopy[key];
-//   }
