@@ -8,6 +8,9 @@ var imageSrcArray = ['images/001.png', 'images/004.png', 'images/007.png', 'imag
 var timerId = null;
 
 function updatingPicture() {
+  if (currentImage === 4) {
+    currentImage = -1;
+  }
   currentImage++;
   for (let i = 0; i < imageSrcArray.length; i++) {
     $img.setAttribute('src', imageSrcArray[currentImage]);
@@ -18,10 +21,6 @@ function updatingPicture() {
       } else {
         $circleSelectorAll[a].className = 'circle';
       }
-    }
-    if (currentImage === 4) {
-      currentImage = 0;
-      return;
     }
   }
 }
@@ -74,7 +73,7 @@ function nextPicture(event) {
   if (currentImage === imageSrcArray.length - 1) {
     currentImage = 0;
     $img.setAttribute('src', imageSrcArray[currentImage]);
-    $img.setAttribute('data-image-index', '0');
+    $img.setAttribute('data-image-index', currentImage);
     for (let i = 0; i < $circleSelectorAll.length; i++) {
       if (parseInt($circleSelectorAll[i].getAttribute('data-image-index')) === parseInt($img.getAttribute('data-image-index'))) {
         $circleSelectorAll[i].className = 'circle circle-background';
