@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container text-align-center">
+    <div class="row justify-center">
+      <div class="column-one-third flex justify-center">
+        <div class="arrow left relative-fifty previous-arrow"></div>
+      </div>
+      <div class="column-one-third">
+        <img src="images/001.png" alt="pikachu" data-image-index="0">
+      </div>
+      <div class="column-one-third flex justify-center">
+        <div class="arrow right relative-fifty next-arrow"></div>
+      </div>
+    </div>
+    <div class="row justify-center">
+      <div class="column-one-fifth flex space-evenly">
+        <div class="circle circle-background" data-image-index="0"></div>
+        <div class="circle" data-image-index="1"></div>
+        <div class="circle" data-image-index="2"></div>
+        <div class="circle" data-image-index="3"></div>
+        <div class="circle" data-image-index="4"></div>
+      </div>
+    </div>
+  </div>
+<script src="main.js"></script>
+</body>
+</html>
