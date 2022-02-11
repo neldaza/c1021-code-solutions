@@ -24,7 +24,7 @@ class Home extends React.Component {
       <div className='my-row justify-content-center'>
         <div className='my-column-full'>
           {
-                <Carousel controls={true} interval={3000} slide={false} prevIcon={<FontAwesomeIcon icon={faArrowLeft}/>}
+                <Carousel controls={true} interval={1500} slide={false} prevIcon={<FontAwesomeIcon icon={faArrowLeft}/>}
                   nextIcon={<FontAwesomeIcon icon={faArrowRight}/>}>
               {
                 this.state.images.map(photo => {
