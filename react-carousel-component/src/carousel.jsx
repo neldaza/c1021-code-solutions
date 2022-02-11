@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,7 +13,8 @@ class Home extends React.Component {
       ],
       currentPhoto: 0
     };
-
+    this.circleClick = this.circleClick.bind(this);
+    this.arrowClick = this.arrowClick.bind(this);
   }
 
   componentDidMount() {
@@ -24,8 +23,33 @@ class Home extends React.Component {
         this.setState({ currentPhoto: -1 });
       }
       this.setState({ currentPhoto: this.state.currentPhoto + 1 });
-      console.log(this.state.currentPhoto);
     }, 3000);
+  }
+
+  circleClick(event) {
+    clearInterval(this.carouselInterval);
+    this.setState({
+      currentPhoto: parseInt(event.target.getAttribute('imageindex'))
+    });
+    this.componentDidMount();
+  }
+
+  arrowClick(event) {
+
+    clearInterval(this.carouselInterval);
+    if (event.target.className === 'arrow left relative-fifty previous-arrow' && this.state.currentPhoto === 0) {
+      this.setState({ currentPhoto: this.state.images.length - 1 });
+    } else if (event.target.className === 'arrow right relative-fifty next-arrow' && this.state.currentPhoto === this.state.images.length - 1) {
+      this.setState({ currentPhoto: 0 });
+
+    } else if (event.target.className === 'arrow right relative-fifty next-arrow') {
+      this.setState({ currentPhoto: this.state.currentPhoto + 1 });
+
+    } else if (event.target.className === 'arrow left relative-fifty previous-arrow') {
+      this.setState({ currentPhoto: this.state.currentPhoto - 1 });
+    }
+
+    this.componentDidMount();
   }
 
   render() {
@@ -34,9 +58,7 @@ class Home extends React.Component {
     <div className='container'>
       <div className="row justify-content-center">
         <div className="column-third flex justify-content-center">
-          <div className="relative-fifty previous-arrow">
-            <FontAwesomeIcon icon={faArrowLeft}/>
-          </div>
+          <div className="arrow left relative-fifty previous-arrow" onClick={this.arrowClick}></div>
         </div>
         <div className="column-third">
           {
@@ -48,18 +70,23 @@ class Home extends React.Component {
           }
         </div>
         <div className="column-one-third flex justify-center">
-          <div className="relative-fifty next-arrow">
-            <FontAwesomeIcon icon={faArrowRight}/>
-          </div>
+          <div className="arrow right relative-fifty next-arrow" onClick={this.arrowClick}></div>
         </div>
       </div>
       <div className="row justify-content-center">
         <div className="flex space-evenly">
-          <div className="circle circle-background" data-image-index="0"></div>
-          <div className="circle" data-image-index="1"></div>
-          <div className="circle" data-image-index="2"></div>
-          <div className="circle" data-image-index="3"></div>
-          <div className="circle" data-image-index="4"></div>
+          {
+            this.state.images.map(photo => {
+              if (this.state.currentPhoto === photo.photoId) {
+                return (
+                  <div key={photo.photoId} className="circle circle-background" imageindex={photo.photoId} onClick={this.circleClick}></div>
+                );
+              }
+              return (
+                <div key={photo.photoId} className="circle" imageindex={photo.photoId} onClick={this.circleClick}></div>
+              );
+            })
+          }
         </div>
       </div>
     </div>
