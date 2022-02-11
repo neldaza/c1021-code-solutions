@@ -1,0 +1,23 @@
+.my-hidden {
+  display: none !important;
+}
+
+body {
+  margin: unset;
+}
+
+.my-column-half {
+  width: 50%;
+}
+
+.my-row {
+  display: flex;
+}
+
+.my-column-third {
+  width: calc(100 / 3);
+}
+
+.justify-content-center {
+  justify-content: center;
+}

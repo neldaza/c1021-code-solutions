@@ -1,0 +1,28 @@
+.carousel-control-prev-icon {
+  background-color: black;
+}
+
+.fa-arrow-left,
+.fa-arrow-right {
+  color: black;
+  font-size: 30pt;
+}
+
+.carousel-control-prev {
+  left: -5rem;
+}
+
+.carousel-control-next {
+  right: -5rem;
+}
+
+.carousel-indicators > button {
+  border-radius: 50% !important;
+  height: 12.5px !important;
+  width: 12.5px !important;
+  background-color: black !important;
+}
+
+.carousel-indicators {
+  bottom: -2rem;
+}
