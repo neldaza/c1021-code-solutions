@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import Home from './carousel';
+import App from './app';
 
 ReactDOM.render(
-  <Home />,
+  <App />,
   document.getElementById('root')
 );
