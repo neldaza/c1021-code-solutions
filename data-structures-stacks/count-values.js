@@ -1,19 +1,11 @@
 /* exported countValues */
 
 function countValues(stack) {
-  const stackArray = Array.from(stack.print());
-  let counter = stackArray.length;
-  const numbersArray = [];
+  let counter = 0;
 
-  while (counter > 0) {
-    if (stack.peek() !== undefined) {
-      numbersArray.push(stack.peek());
-    }
-    if (numbersArray[0] === undefined) {
-      return 0;
-    }
+  while (stack.peek() !== undefined) {
     stack.pop();
-    counter--;
+    counter++;
   }
-  return numbersArray.length;
+  return counter;
 }
