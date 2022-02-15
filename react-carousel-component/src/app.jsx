@@ -21,7 +21,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.carouselInterval = setInterval(() => {
-      if (this.state.currentPhoto === 4) {
+      if (this.state.currentPhoto === this.state.images.length - 1) {
         this.setState({ currentPhoto: -1 });
       }
       this.setState({ currentPhoto: this.state.currentPhoto + 1 });
