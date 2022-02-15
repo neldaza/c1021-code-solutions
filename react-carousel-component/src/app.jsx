@@ -38,15 +38,15 @@ export default class App extends React.Component {
 
   arrowClick(event) {
     clearInterval(this.carouselInterval);
-    if (event.target.className === 'arrow left relative-fifty previous-arrow' && this.state.currentPhoto === 0) {
+    if (event.target.getAttribute('arrow') === 'left' && this.state.currentPhoto === 0) {
       this.setState({ currentPhoto: this.state.images.length - 1 });
-    } else if (event.target.className === 'arrow right relative-fifty next-arrow' && this.state.currentPhoto === this.state.images.length - 1) {
+    } else if (event.target.getAttribute('arrow') === 'right' && this.state.currentPhoto === this.state.images.length - 1) {
       this.setState({ currentPhoto: 0 });
 
-    } else if (event.target.className === 'arrow right relative-fifty next-arrow') {
+    } else if (event.target.getAttribute('arrow') === 'right') {
       this.setState({ currentPhoto: this.state.currentPhoto + 1 });
 
-    } else if (event.target.className === 'arrow left relative-fifty previous-arrow') {
+    } else if (event.target.getAttribute('arrow') === 'left') {
       this.setState({ currentPhoto: this.state.currentPhoto - 1 });
     }
 

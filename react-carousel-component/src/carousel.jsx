@@ -14,7 +14,7 @@ class Carousel extends React.Component {
     <div className='container'>
       <div className="row justify-content-center">
         <div className="column-third flex justify-content-center">
-          <div className="arrow left relative-fifty previous-arrow" onClick={this.props.handleArrows}></div>
+          <div className="arrow left relative-fifty previous-arrow" arrow={'left'} onClick={this.props.arrowClick}></div>
         </div>
         <div className="column-third">
           {
@@ -26,7 +26,7 @@ class Carousel extends React.Component {
           }
         </div>
         <div className="column-one-third flex justify-center">
-          <div className="arrow right relative-fifty next-arrow" onClick={this.props.arrowClick}></div>
+          <div className="arrow right relative-fifty next-arrow" arrow={'right'} onClick={this.props.arrowClick}></div>
         </div>
       </div>
       <div className="row justify-content-center">
