@@ -6,31 +6,6 @@ class Carousel extends React.Component {
     this.state = {
       currentPhoto: 0
     };
-    this.handleArrows = this.handleArrows.bind(this);
-    this.renderPics = this.renderPics.bind(this);
-    this.renderCircs = this.renderCircs.bind(this);
-  }
-
-  handleArrows(event) {
-    this.props.arrowClick();
-  }
-
-  renderPics() {
-    const { renderImages } = this.props;
-    return (
-        <React.Fragment>
-          {renderImages()}
-        </React.Fragment>
-    );
-  }
-
-  renderCircs() {
-    const { renderCircles } = this.props;
-    return (
-      <React.Fragment>
-        {renderCircles()}
-      </React.Fragment>
-    );
   }
 
   render() {
