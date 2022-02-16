@@ -1,0 +1,31 @@
+.hidden {
+  display: none !important;
+}
+
+body {
+  margin: unset;
+}
+
+.column-half {
+  width: 50%;
+}
+
+.row {
+  display: flex;
+}
+
+.column-third {
+  width: calc(100 / 3);
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
