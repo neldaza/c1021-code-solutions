@@ -65,12 +65,6 @@ export default class Home extends React.Component {
 }
 
 class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentPhoto: 0
-    };
-  }
 
   render() {
     return (
