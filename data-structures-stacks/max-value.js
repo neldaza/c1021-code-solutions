@@ -1,3 +1,4 @@
+/* global Stack */
 /* exported maxValue */
 
 function maxValue(stack) {
