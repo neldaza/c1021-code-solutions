@@ -33,3 +33,24 @@ const dealDeck = deck => {
   }
   return players;
 };
+
+const calculateScores = name => {
+  for (let i = 0; i < players.length; i++) {
+    let sum = 0;
+    const player = players[i];
+    const playerHand = player.hand;
+    const playerName = player.name;
+    if (name === playerName) {
+      for (let j = 0; j < playerHand.length; j++) {
+        const card = playerHand[j];
+        if (card.Rank === 'Jack' || card.Rank === 'Queen' || card.Rank === 'King') {
+          card.Rank = 10;
+        } else if (card.Rank === 'Ace') {
+          card.Rank = 11;
+        }
+        sum += card.Rank;
+      }
+      return sum;
+    }
+  }
+};
