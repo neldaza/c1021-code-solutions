@@ -24,3 +24,12 @@ function shuffleDeck(deck) {
   }
   return deck;
 }
+
+const dealDeck = deck => {
+  for (let i = 0; i < players.length; i++) {
+    const drawedCards = deck.splice(0, 2);
+    const player = players[i];
+    player.hand = drawedCards;
+  }
+  return players;
+};
