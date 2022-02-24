@@ -14,3 +14,13 @@ function createDeck() {
   }
   return deck;
 }
+
+function shuffleDeck(deck) {
+  for (var i = 0; i < deck.length; i++) {
+    var temp = deck[i];
+    var randomizer = Math.floor(Math.random() * deck.length);
+    deck[i] = deck[randomizer];
+    deck[randomizer] = temp;
+  }
+  return deck;
+}
