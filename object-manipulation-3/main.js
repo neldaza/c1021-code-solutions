@@ -126,5 +126,5 @@ const winner = () => {
 
 var currentDeck = createDeck();
 shuffleDeck(currentDeck);
-console.log(dealDeck(currentDeck));
+dealDeck(currentDeck);
 winner();
