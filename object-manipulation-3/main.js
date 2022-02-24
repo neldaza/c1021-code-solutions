@@ -54,3 +54,25 @@ const calculateScores = name => {
     }
   }
 };
+
+const winner = () => {
+  const playerOneScore = calculateScores('Art');
+  const playerTwoScore = calculateScores('Judson');
+  const playerThreeScore = calculateScores('Claire');
+  const playerFourScore = calculateScores('Dan');
+  const winningScore = Math.max(playerOneScore, playerTwoScore, playerThreeScore, playerFourScore);
+  if (winningScore === playerOneScore) {
+    console.log('The winner is Nelson!');
+  } else if (winningScore === playerTwoScore) {
+    console.log('The winner is Tim!');
+  } else if (winningScore === playerThreeScore) {
+    console.log('The winner is Cody!');
+  } else if (winningScore === playerFourScore) {
+    console.log('The winner is Cassandra!');
+  }
+};
+
+var currentDeck = createDeck();
+shuffleDeck(currentDeck);
+dealDeck(currentDeck);
+winner();
